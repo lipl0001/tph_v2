@@ -9,7 +9,7 @@
   <div class="container">
     <div class="carousel-view">
       <button id="prev-btn" class="prev-btn">
-        <img src="../../public/hjerte.png" alt="" />
+        <img src="../../public/pil.png" alt="" />
       </button>
       <div id="item-list" class="item-list">
         <img id="item" class="item" src="https://images.unsplash.com/photo-1662466818758-0e299f92591a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjQ3ODc1NDY&ixlib=rb-1.2.1&q=80" />
@@ -90,12 +90,12 @@
 
   .prev-btn {
     cursor: pointer;
+    transform: rotate(180deg);
   }
 
   .next-btn {
     cursor: pointer;
     position: absolute;
-    z-index: 1;
     left: 93%;
   }
 
