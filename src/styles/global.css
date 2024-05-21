@@ -15,6 +15,7 @@
   /* Roots for fonte */
 --primary: "Roboto Condensed", sans-serif;
 --secondary: "Montserrat", sans-serif;
+--tertiary: "Kalam", cursive;
 }
 
 h1 {
@@ -22,15 +23,16 @@ h1 {
   font-weight: 800;
 }
 
-h2 .bold {
+h2 {
   font-family: var(--primary);
   font-weight: 700;
+  font-size: 3rem;
 }
 
-h2 .thin {
+/*h2 #thin {
 font-family: var(--primary);
 font-weight: 300;
-}
+}*/
 
 p {
   font-family: var(--secondary);
