@@ -3,14 +3,12 @@
 ---
 
 <h2 id="bold">NEW SEASON</h2>
+<img src="../../public/pil_forside.png" alt="pil_forside" class="pil_forside" />
 
 <div class="explore_n_carousel">
   <p>Explore our lastest arrivals</p>
   <div class="container">
     <div class="carousel-view">
-      <button id="prev-btn" class="prev-btn">
-        <img src="../../public/pil.png" alt="" />
-      </button>
       <div id="item-list" class="item-list">
         <img id="item" class="item" src="https://images.unsplash.com/photo-1662466818758-0e299f92591a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjQ3ODc1NDY&ixlib=rb-1.2.1&q=80" />
         <img id="item" class="item" src="https://images.unsplash.com/photo-1662466818758-0e299f92591a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjQ3ODc1NDY&ixlib=rb-1.2.1&q=80" />
@@ -26,12 +24,20 @@
 </div>
 
 <style>
+  .pil_forside {
+    width: 325px;
+    position: absolute;
+    left: 10%;
+    top: 150px;
+    z-index: 1;
+  }
   h2 {
     padding-left: 4%;
   }
 
   img {
     width: 80%;
+    background-color: transparent;
   }
 
   .explore_n_carousel {
@@ -39,12 +45,11 @@
   }
 
   p {
-    display: flex;
-    align-items: end;
-    width: 100%;
-    margin-bottom: 7%;
-    z-index: 1;
-    padding-left: 4%;
+    position: absolute;
+    top: 450px;
+    left: 5%;
+    width: 20%;
+    font-size: 2.3cqw;
   }
 
   button {
@@ -72,8 +77,8 @@
   }
 
   .carousel-view .item-list {
-    max-width: 1150px;
-    width: 79vw;
+    max-width: 1025px;
+    width: 67vw;
     padding: 50px 10px;
     display: flex;
     gap: 20px;
@@ -87,12 +92,6 @@
   .item-list::-webkit-scrollbar {
     display: none;
   }
-
-  .prev-btn {
-    cursor: pointer;
-    transform: rotate(180deg);
-  }
-
   .next-btn {
     cursor: pointer;
     position: absolute;
@@ -100,8 +99,8 @@
   }
 
   .item {
-    min-width: 350px;
-    height: 425px;
+    min-width: 325px;
+    height: 400px;
   }
 </style>
 
