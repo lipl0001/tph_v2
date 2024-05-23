@@ -5,6 +5,9 @@
 <div class="qoute_sektion">
   <img src="../../public/ikoner/tekst_stor_ring.png" alt="tekst_stor_ring" class="tekst_stor_ring" />
   <p class="quote">OUR DREAM IS TO CREATE AN INCLUSIVE COMMUNITY OF PEOPLE SHARING THE PASSION FOR PERSONAL EXPRESSION AND STYLE</p>
+  <div class="forfatter">
+    <p>- your panic dealer</p>
+  </div>
 </div>
 
 <style>
@@ -14,17 +17,22 @@
   }
   .qoute_sektion {
     width: 100%;
-  }
-  .quote {
-    font-family: var(--tertiary);
-    font-size: 4.6cqw;
+    padding-bottom: 5%;
     padding-left: 4%;
     padding-right: 4%;
   }
-
+  .quote {
+    font-family: var(--tertiary);
+    font-size: 4.8cqw;
+  }
   .tekst_stor_ring {
-    position: relative;
-    top: 250px;
-    left: 40px;
+    position: absolute;
+    left: 2.1%;
+    padding-top: 5%;
+  }
+
+  .forfatter {
+    display: flex;
+    justify-content: end;
   }
 </style>
