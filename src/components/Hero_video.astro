@@ -2,13 +2,48 @@
 
 ---
 
-<video class="hero_video" width="1512" height="1080" autoplay loop muted playsinline>
-  <source src="https://www.projectjohansson.dk/kea/thepanichood/video/TPHH.mp4" type="video/mp4" />
-</video>
-
+<div class="container">
+  <div class="knap">
+    <button>EXPLORE PRODUCTS</button>
+  </div>
+  <video class="hero_video" width="1512" height="1080" autoplay loop muted playsinline>
+    <source src="https://www.projectjohansson.dk/kea/thepanichood/video/TPHH.mp4" type="video/mp4" />
+  </video>
+</div>
 <style>
+  .container {
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+
   .hero_video {
     width: 100%;
     height: auto;
+  }
+
+  .knap {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrerer elementet */
+    background-color: transparent;
+  }
+
+  button {
+    padding: 5%;
+    width: 125%;
+    background-color: var(--accentColor);
+    border-color: var(--notThatBlack);
+    border: thin;
+    cursor: pointer;
+    font-family: var(--primary);
+    color: var(--delicateWhite);
+    font-size: 1.5cqw;
+  }
+
+  button:hover {
+    text-decoration: underline;
   }
 </style>
