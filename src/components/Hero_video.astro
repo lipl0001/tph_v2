@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="knap">
-    <button>EXPLORE PRODUCTS</button>
+    <button><a href="https://thepanichood.com/collections/frontpage">EXPLORE PRODUCTS</a></button>
   </div>
   <video class="hero_video" width="1512" height="1080" autoplay loop muted playsinline>
     <source src="https://www.projectjohansson.dk/kea/thepanichood/video/TPHH.mp4" type="video/mp4" />
@@ -43,7 +43,13 @@
     font-size: 1.5cqw;
   }
 
-  button:hover {
+  .container a {
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--delicateWhite);
+  }
+
+  .container a:hover {
     text-decoration: underline;
   }
 </style>
