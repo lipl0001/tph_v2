@@ -10,32 +10,44 @@
   --delicateWhite: #fefefe;
   --notThatBlack: #040404;
   --oliveGrey: #525148;
-  --accentColor: #073F9C;
+  --accentColor: #073f9c;
 
   /* Roots for fonte */
---primary: "Roboto Condensed", sans-serif;
---secondary: "Montserrat", sans-serif;
---tertiary: "Kalam", cursive;
+  --primary: "Roboto Condensed", sans-serif;
+  --secondary: "Montserrat", sans-serif;
+  --tertiary: "Kalam", cursive;
 }
 
-h1 {
-  font-family: var(--primary);
-  font-weight: 800;
-}
+/* DESKTOP */
+@media screen and (min-width: 768px) {
+  h1 {
+    font-family: var(--primary);
+    font-weight: 800;
+  }
 
-h2 {
-  font-family: var(--primary);
-  font-weight: 700;
-  font-size: 3rem;
-}
+  h2 {
+    font-family: var(--primary);
+    font-weight: 700;
+    font-size: 3rem;
+  }
 
-/*h2 #thin {
+  /*h2 #thin {
 font-family: var(--primary);
 font-weight: 300;
 }*/
 
-p {
-  font-family: var(--secondary);
-  font-weight: 400;
-  font-size: 1rem;
+  p {
+    font-family: var(--secondary);
+    font-weight: 400;
+    font-size: 1rem;
+  }
+}
+
+/* MOBIL */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-family: var(--primary);
+    font-weight: 800;
+    font-size: 2.5rem;
+  }
 }
