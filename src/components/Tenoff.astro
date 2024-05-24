@@ -1,0 +1,65 @@
+---
+
+---
+
+<div class="gem" id="tenoff">
+  <button><a href="https://thepanichood.com/collections/frontpage">Get 10% off</a><div class="x">X</div></button>
+</div>
+
+<style>
+  .gem {
+    display: none;
+  }
+  #tenoff {
+    position: fixed;
+    z-index: 1000;
+    right: 2%;
+    bottom: 5%;
+  }
+
+  #tenoff a {
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--delicateWhite);
+    width: 5.5em;
+  }
+
+  .x {
+    font-family: var(--secondary);
+    background-color: var(--accentColor);
+    color: var(--delicateWhite);
+    font-size: 1.8cqw;
+  }
+  button {
+    background-color: var(--accentColor);
+    border-color: var(--notThatBlack);
+    border: thin;
+    cursor: pointer;
+    font-family: var(--secondary);
+    color: var(--delicateWhite);
+    font-size: 1.5cqw;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 5%;
+    padding-right: 6%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+</style>
+
+<script>
+  window.addEventListener("load", sidenVises);
+
+  function sidenVises() {
+    console.log("hej1");
+    document.querySelector("#tenoff").classList.remove("gem");
+  }
+
+  document.querySelector(".x").addEventListener("click", startspillet);
+
+  function startspillet() {
+    console.log("hej");
+    document.querySelector("#tenoff").classList.add("gem");
+  }
+</script>
