@@ -7,34 +7,89 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="PanicHood">
+  <Header />
   <main>
-    <Header />
     <p><a href="">Home</a> / <a href="">Products</a></p>
     <h1>PRODUCTS</h1>
     <section class="trending_now">
       <div>
         <img src="../../public/img/emil_croped.webp" alt="" />
       </div>
-      <div>
+      <div class="trending_now_text">
         <h2>TRENDING NOW</h2>
         <img src="../../public/illustrationer/pil_product_list.svg" alt="" />
       </div>
     </section>
-    <Footer />
+    <div class="filter_produkter">
+      <div class="filter">
+        <img src="../../public/ikoner/Filter.png" alt="" />
+        <p>FILTER</p>
+      </div>
+      <p>20 PRODUCTS</p>
+    </div>
   </main>
+  <Footer />
 </Layout>
 
 <style>
+  main {
+    padding: 4rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--oliveGrey);
+  }
   h1 {
     font-size: 4rem;
   }
   .trending_now img {
-    max-width: 700px;
-    height: 400px;
+    max-width: 70%;
+    height: auto;
   }
 
   .trending_now {
     display: flex;
+    justify-content: center;
+  }
+  .trending_now div {
+    width: 100%;
+  }
+
+  .trending_now_text {
+    text-align: center;
+    justify-content: center;
+    justify-self: center;
+  }
+
+  .trending_now h2 {
+    font-weight: 400;
+    font-size: 4cqw;
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 10%;
+    padding-top: 5%;
+  }
+  .trending_now_text img {
+    position: relative;
+    right: 40%;
+  }
+
+  .filter_produkter {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4%;
+    padding-bottom: 0.5%;
+  }
+
+  .filter {
+    display: flex;
+  }
+
+  .filter img {
+    width: 40px;
+    height: 100%;
+    margin-right: 10dvh;
   }
 </style>
 
