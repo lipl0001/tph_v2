@@ -11,12 +11,30 @@ import Footer from "../components/Footer.astro";
     <Header />
     <p><a href="">Home</a> / <a href="">Products</a></p>
     <h1>PRODUCTS</h1>
+    <section class="trending_now">
+      <div>
+        <img src="../../public/img/emil_croped.webp" alt="" />
+      </div>
+      <div>
+        <h2>TRENDING NOW</h2>
+        <img src="../../public/illustrationer/pil_product_list.svg" alt="" />
+      </div>
+    </section>
     <Footer />
   </main>
 </Layout>
 
 <style>
-  * {
+  h1 {
+    font-size: 4rem;
+  }
+  .trending_now img {
+    max-width: 700px;
+    height: 400px;
+  }
+
+  .trending_now {
+    display: flex;
   }
 </style>
 
