@@ -18,60 +18,46 @@ import Tenoff from "../components/Tenoff.astro";
     <Hero_video />
     <New_season />
     <Quote />
-      <div class="grid-container">
-        <div class="item item1">
-            <img src="img/anna.png" alt="Venstre Billede">
+    <div class="grid-container">
+      <div class="item item1">
+        <img src="img/anna.png" alt="Venstre Billede" />
+      </div>
+      <div class="grid_1-1">
+        <div class="item item2">
+          <img src="../../public/img/mission1.webp" alt="Øvre Højre Billede" />
         </div>
-        <div class="grid_1-1">
-            <div class="item item2">
-                <img src="../../public/img/mission1.webp" alt="Øvre Højre Billede">
-            </div>
-            <div class="item item3">
-                <img src="../../public/img/mission2.webp" alt="Nedre Højre Billede">
-            </div>
+        <div class="item item3">
+          <img src="../../public/img/mission2.webp" alt="Nedre Højre Billede" />
         </div>
+      </div>
 
-
-        <div class="grid_values">
-            <div class="community">
-                <div class="text_community">
-                    <h2>COMMUNITY</h2>
-                    <p>Our brand is all about unity and understanding. We're a family that appreciates the realness of
-                        'the
-                        hood' and embraces
-                        everyone as they are.</p>
-                </div>
-                <div class="img_community">
-                    <img class="img_community" src="img/board.svg" alt="board">
-                </div>
-            </div>
-
-            <div class="impact">
-                <div class="text_impact">
-                    <h2>IMPACT</h2>
-                    <p>With 'Panic' in our name, we acknowledge the lively rush of life and our goal to disrupt the
-                        norms.
-                        We
-                        strive for
-                        fashion to be about personal expression, not conformity.</p>
-                </div>
-            </div>
-
-            <div class="being_yourself">
-                <div class="text_being_yourself">
-                    <h2>BEING YOURSELF</h2>
-                    <p>Choosing TPH means showing up as you are, unapologetic and genuine. It's about living your truth
-                        and
-                        embracing every bit
-                        of your unique hello self.
-                    </p>
-                </div>
-                <div class="usynlig_boks"></div>
-            </div>
+      <div class="grid_values">
+        <div class="community">
+          <div class="text_community">
+            <h2>COMMUNITY</h2>
+            <p>Our brand is all about unity and understanding. We're a family that appreciates the realness of 'the hood' and embraces everyone as they are.</p>
+          </div>
+          <div class="img_community">
+            <img class="img_community" src="img/board.svg" alt="board" />
+          </div>
         </div>
 
+        <div class="impact">
+          <div class="text_impact">
+            <h2>IMPACT</h2>
+            <p>With 'Panic' in our name, we acknowledge the lively rush of life and our goal to disrupt the norms. We strive for fashion to be about personal expression, not conformity.</p>
+          </div>
+        </div>
+
+        <div class="being_yourself">
+          <div class="text_being_yourself">
+            <h2>BEING YOURSELF</h2>
+            <p>Choosing TPH means showing up as you are, unapologetic and genuine. It's about living your truth and embracing every bit of your unique hello self.</p>
+          </div>
+          <div class="usynlig_boks"></div>
+        </div>
+      </div>
     </div>
-
 
     <Collage />
     <Footer />
@@ -80,74 +66,19 @@ import Tenoff from "../components/Tenoff.astro";
 
 <style>
   .grid-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto auto;
-}
-
-.item img {
-  width: 100%;
-  height: auto;
-}
-
-.item1 {
-  grid-column: 1 / span 1;
-  grid-row: 1 / span 2;
-}
-
-.item2 {
-  grid-column: 2 / span 1;
-  grid-row: 1 / span 1;
-}
-
-.item3 {
-  grid-column: 2 / span 1;
-  grid-row: 2 / span 1;
-}
-
-.community {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.grid_values {
-  margin: 2rem;
-  grid-column: 1 / span 2;
-  grid-row: 2 / span 1;
-}
-
-.img_community {
-  width: 90%;
-}
-
-.text_impact {
-  margin-top: 2rem;
-  width: 90%;
-  align-content: end;
-  width: 60%;
-}
-
-.impact {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.being_yourself {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 2rem;
-}
-
-@media (min-width: 800px) {
-  .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
   }
 
-  .grid_1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .item1 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
   }
 
   .item2 {
@@ -156,43 +87,98 @@ import Tenoff from "../components/Tenoff.astro";
   }
 
   .item3 {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
-  }
-
-  .grid_values {
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
   }
 
-  .impact {
-    margin-top: 2rem;
-    display: inline;
-  }
-
-  .text_impact {
-    margin-bottom: 2rem;
-  }
-
-  .being_yourself {
-    display: inline;
-  }
-
-  .grid_values p,
-  h2 {
-    margin: 0%;
-  }
-
   .community {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid_values {
+    margin: 2rem;
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
   }
 
   .img_community {
-    width: 70%;
+    width: 90%;
+  }
+
+  .text_impact {
+    margin-top: 2rem;
+    width: 90%;
+    align-content: end;
+    width: 60%;
+  }
+
+  .impact {
+    margin-top: 2rem;
     display: flex;
     justify-content: flex-end;
   }
-}
+
+  .being_yourself {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 800px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .item2 {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+    }
+
+    .item3 {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }
+
+    .grid_values {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+    }
+
+    .impact {
+      margin-top: 2rem;
+      display: inline;
+    }
+
+    .text_impact {
+      margin-bottom: 2rem;
+    }
+
+    .being_yourself {
+      display: inline;
+    }
+
+    .grid_values p,
+    h2 {
+      margin: 0%;
+    }
+
+    .community {
+      display: flex;
+    }
+
+    .img_community {
+      width: 70%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
 </style>
 
 <script></script>
