@@ -21,16 +21,29 @@
     @media screen and (max-width: 768px) {
     .grid_collage {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         margin: 50px;
     }
+    .grid_collage img {
+            width: 100%; /* Gør billederne responsive */
+            height: auto; /* Bevarer billedets proportioner */
+            display: block; /* Fjerner mellemrum under billederne */
+        }
     .tekst {
-        align-items: center;
+       margin-left: 2rem;
+       margin-right: 2rem;
     }
     .join {
+        display: flex;
+        justify-content: center; /* Centrerer horisontalt */
+        align-items: center;
         margin-bottom: 0.5rem;
 }
     .sign_up {
+        display: flex;
+        justify-content: center; /* Centrerer horisontalt - virker ikke? */
+        align-items: center;
         margin-bottom: 1rem;
 }
 .form {
@@ -60,6 +73,7 @@
             flex: 0 0 auto; /* Knappen bevarer sin størrelse */
         }
 .terms {
+    margin-top: 1rem;
     margin-bottom: 5rem;
 }
 }
