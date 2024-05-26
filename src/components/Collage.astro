@@ -6,14 +6,15 @@
     <div><img src="public/img/collage3.webp" alt="collage"></div>
     <div><img src="public/img/collage4.webp" alt="collage"></div>
 </div>
-<p class="header2_bold">JOIN THE HOOD</p>
-<p>SIGN UP FOR OUR NEWSLETTER AND GET 10% OFF YOUR FIRST ORDER</p>
-<form>
+<div class="tekst">
+<h1 class="join">JOIN THE HOOD</h1>
+<h5 class="sign_up">SIGN UP FOR OUR NEWSLETTER AND GET 10% OFF YOUR FIRST ORDER</h5>
+<form class="form">
     <label for="email">DROP YOUR E-MAIL HERE...</label>
     <input type="text" id="email" name="email">
 </form>
-<p>By signing up, you consent to The Panichood sending you newsletters. We never share your information with third parties. You can unsubscribe at any time via the link in our emails.</p>
-
+<p class="terms">By signing up, you consent to The Panichood sending you newsletters. We never share your information with third parties. You can unsubscribe at any time via the link in our emails.</p>
+</div>
 <style>
     @media screen and (max-width: 768px) {
     .grid_collage {
@@ -21,10 +22,17 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         align-items: center;
     }
-    .header2_bold {
-    font-family: var(--primary);
-    font-weight: 800;
-    font-size: 2.5rem;
+    .tekst {
+        align-items: center;
+    }
+    .join {
+        margin-bottom: 0.5rem;
+}
+    .sign_up {
+        margin-bottom: 1rem;
+}
+    .form {
+    margin-bottom: 0.5rem;
 }
 }
 </style>
