@@ -1,10 +1,10 @@
 ---
 ---
 <div class="grid_collage">
-    <div><img src="public/img/collage1.webp" alt="collage"></div>
-    <div><img src="public/img/collage2.webp" alt="collage"></div>
-    <div><img src="public/img/collage3.webp" alt="collage"></div>
-    <div><img src="public/img/collage4.webp" alt="collage"></div>
+    <div class="pic1"><img src="public/img/collage1.webp" alt="collage"></div>
+    <div class="pic2"><img src="public/img/collage2.webp" alt="collage"></div>
+    <div class="pic3"><img src="public/img/collage3.webp" alt="collage"></div>
+    <div class="pic4"><img src="public/img/collage4.webp" alt="collage"></div>
 </div>
 <div class="tekst">
 <h1 class="join">JOIN THE HOOD</h1>
@@ -17,7 +17,9 @@
 </form>
 <p class="terms">By signing up, you consent to The Panichood sending you newsletters. We never share your information with third parties. You can unsubscribe at any time via the link in our emails.</p>
 </div>
+
 <style>
+    /* MOBIL */
     @media screen and (max-width: 768px) {
     .grid_collage {
         display: grid;
@@ -30,6 +32,12 @@
             height: auto; /* Bevarer billedets proportioner */
             display: block; /* Fjerner mellemrum under billederne */
         }
+
+    /* Specifikke størrelser til forskudte billeder */
+        .pic1 { grid-column: 2 / span 1; grid-row: 1/ span 1; }
+        .pic2  { grid-column: span 1; grid-row: span 1; }
+        .pic3 { grid-column: 2 / span 1; grid-row: 2 / span 1; }
+        .pic4 { grid-column: span 1; grid-row: 2 / span 1; }
     .tekst {
        margin-left: 2rem;
        margin-right: 2rem;
@@ -76,5 +84,13 @@
     margin-top: 1rem;
     margin-bottom: 5rem;
 }
+}
+/* DESKTOP */
+@media screen and (min-width: 768px) {
+    h1 {
+    font-family: var(--primary);
+    font-weight: 800;
+    font-size: 3rem;
+    }
 }
 </style>
