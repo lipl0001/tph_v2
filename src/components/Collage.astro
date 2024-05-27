@@ -1,5 +1,6 @@
 ---
 ---
+<div class="collage">
 <div class="grid_collage">
     <div class="pic1"><img src="public/img/collage1.webp" alt="collage"></div>
     <div class="pic2"><img src="public/img/collage2.webp" alt="collage"></div>
@@ -7,6 +8,7 @@
     <div class="pic4"><img src="public/img/collage4.webp" alt="collage"></div>
 </div>
 <div class="tekst">
+    <div class="div_tekst">
 <h1 class="join">JOIN THE HOOD</h1>
 <h5 class="sign_up">SIGN UP FOR OUR NEWSLETTER AND GET 10% OFF YOUR FIRST ORDER</h5>
 <form class="form">
@@ -16,6 +18,8 @@
     <button type="submit" class="sign-up-btn">SIGN UP</button>
 </form>
 <p class="terms">By signing up, you consent to The Panichood sending you newsletters. We never share your information with third parties. You can unsubscribe at any time via the link in our emails.</p>
+</div>
+</div>
 </div>
 
 <style>
@@ -33,11 +37,38 @@
             display: block; /* Fjerner mellemrum under billederne */
         }
 
-    /* Specifikke størrelser til forskudte billeder */
-        .pic1 { grid-column: 2 / span 1; grid-row: 1/ span 1; }
-        .pic2  { grid-column: span 1; grid-row: span 1; }
-        .pic3 { grid-column: 2 / span 1; grid-row: 2 / span 1; }
-        .pic4 { grid-column: span 1; grid-row: 2 / span 1; }
+
+    /* POSTIION AF BILLEDER I COLLAGE */
+    .pic1 {
+width: 70%;
+position: relative;
+left: 25%;
+top: 40%;
+background-color: transparent;
+    }
+    .pic2 {
+    width: 90%;   
+    position: relative;
+    left: -5%;
+    top: 30%;
+    background-color: transparent;
+}
+
+    .pic3 {
+    width: 90%;   
+    position: relative;
+    left: 10%;
+    top: 10%;
+    background-color: transparent;
+    }
+
+    .pic4 {
+    width: 70%;   
+    position: relative;
+    left: 0%;
+    top: 30%;
+    background-color: transparent;
+    }
     .tekst {
        margin-left: 4rem;
        margin-right: 4rem;
@@ -66,7 +97,7 @@
             padding: 10px;
             border: 2px solid #073F9C;
             font-size: 16px;
-            flex: 1; /* Får input-feltet til at fylde tilgængelig plads */
+            width: 65%;
         }
         .sign-up-btn {
             background-color: #fefefe; 
@@ -88,10 +119,15 @@
 /* DESKTOP */
 @media screen and (min-width: 768px) {
     .tekst {
-       margin-left: 15rem;
-       margin-right: 50rem;
-       margin-top: 5rem;
-       margin-bottom: 5rem;
+       margin-left: 0rem;
+       margin-right: 0rem;
+       margin-top: 0rem;
+       margin-bottom: 0rem;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       order: 1;
+       width: 75%;
     }
     .join {
         font-family: var(--primary);
@@ -114,7 +150,7 @@
             padding: 10px;
             border: 2px solid #073F9C;
             font-size: 16px;
-            flex: 1; /* Får input-feltet til at fylde tilgængelig plads */
+            width: 60%;
         }
         .sign-up-btn {
             background-color: #fefefe; 
@@ -130,7 +166,7 @@
         }
 
         .grid_collage img {
-            width: 50%; /* Gør billederne responsive */
+            width: 100%; /* Gør billederne responsive */
             height: auto; /* Bevarer billedets proportioner */
             display: block; /* Fjerner mellemrum under billederne */
         }
@@ -139,6 +175,50 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         margin: 50px;
+        width: 50%;
+        order: 2;
+    }
+    
+    .collage {
+        display: flex;
+    }
+
+    .div_tekst {
+        width: 50%;
+        text-align: center;
+    }
+
+    /* POSTIION AF BILLEDER I COLLAGE */
+    .pic1 {
+width: 70%;
+position: relative;
+left: -20%;
+top: 40%;
+background-color: transparent;
+    }
+
+    .pic2 {
+    width: 90%;   
+    position: relative;
+    left: -50%;
+    top: 30%;
+    background-color: transparent;
+}
+
+    .pic3 {
+    width: 90%;   
+    position: relative;
+    left: -35%;
+    top: 10%;
+    background-color: transparent;
+    }
+
+    .pic4 {
+    width: 70%;   
+    position: relative;
+    left: -45%;
+    top: 30%;
+    background-color: transparent;
     }
 }
 </style>
