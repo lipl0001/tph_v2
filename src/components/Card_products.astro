@@ -1,0 +1,34 @@
+---
+const { header, soldOut } = Astro.props;
+---
+
+<article>
+  <img src="../../public/img/tee2_front.webp" alt="" />
+  {
+    soldOut && (
+      <>
+        <img src="../../public/vare_overstreget.svg" alt="" />
+        <p>hej</p>
+      </>
+    )
+  }
+  <p class="navn">{header}</p>
+  <div class="pris">
+    <p>343,-</p>
+  </div>
+</article>
+
+<style>
+  img {
+    width: 100%;
+  }
+
+  .navn {
+    padding-top: 1%;
+    font-weight: bold;
+  }
+
+  .pris {
+    padding-top: 1%;
+  }
+</style>

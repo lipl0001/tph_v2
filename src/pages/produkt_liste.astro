@@ -4,6 +4,7 @@ import "../styles/style.css";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Card_products from "../components/Card_products.astro";
 ---
 
 <Layout title="PanicHood">
@@ -27,6 +28,14 @@ import Footer from "../components/Footer.astro";
       </div>
       <p>20 PRODUCTS</p>
     </div>
+    <section class="layout_produkt">
+      <Card_products header="PANIC DEALER TEE" />
+      <Card_products header="TPH CARD TEE" soldOut={true} />
+      <Card_products header="CRISSCROSS TEE" />
+      <Card_products header="STARFISH PUFF TEE " />
+      <Card_products header="TPH TOTE BAG " />
+      <Card_products header="PANIC DEALER TEE" />
+    </section>
   </main>
   <Footer />
 </Layout>
@@ -89,7 +98,16 @@ import Footer from "../components/Footer.astro";
   .filter img {
     width: 40px;
     height: 100%;
-    margin-right: 10dvh;
+    margin-right: 10%;
+  }
+
+  .layout_produkt {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 3%;
+    gap: 6%;
+    padding-right: 7%;
+    padding-left: 7%;
   }
 </style>
 
