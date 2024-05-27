@@ -2,7 +2,7 @@
 ---
 <div class="grid_1">
 <h1 class="get_inspired">GET INSPIRED</h1>
-<p>Find more inspiration at our Instagram <a href="https://www.instagram.com/thepanichood" target="_blank">@thepanichood</a></p>
+<p class="tekst">Find more inspiration at our Instagram <a href="https://www.instagram.com/thepanichood" target="_blank">@thepanichood</a></p>
 <div class="billede1">
     <img src="../public/img/getinspired2.webp">
     <p class="name">PANIC DEALER TEE</p>
@@ -46,6 +46,30 @@
         }
 }
 
+/* POSITION AF BILLEDER */
+.billede1 {
+    width: 60%;
+position: relative;
+left: 30%;
+top: 1%;
+background-color: transparent; 
+}
+
+.billede2 {
+    width: 60%;
+position: relative;
+left: -5%;
+top: 15%;
+background-color: transparent; 
+}
+
+.get_inspired, .tekst {
+position: relative;
+left: 15%;
+top: 80%;
+background-color: transparent; 
+}
+
 
 /* DESKTOP */
 @media screen and (min-width: 768px) {
@@ -60,5 +84,22 @@
             height: auto; /* Bevarer billedets proportioner */
             display: block; /* Fjerner mellemrum under billederne */
         }
+    
+        /* POSITION AF BILLEDER */
+.billede1 {
+    width: 30%;
+position: relative;
+left: 60%;
+top: 1%;
+background-color: transparent; 
+}
+
+.billede2 {
+    width: 30%;
+position: relative;
+left: 35%;
+top: -60%;
+background-color: transparent; 
+}
 }
 </style>
