@@ -4,11 +4,11 @@ const { header, soldOut, sale } = Astro.props;
 
 <article>
   <div class="img_container">
-    <img src="../../public/img/tee2_front.webp" alt="" />
+    <img src="../../img/tee2_front.webp" alt="" />
     {
       soldOut && (
         <>
-          <img src="../../public/illustrationer/vare_overstreget2.svg" alt="" class="udsolgt" />
+          <img src="../../illustrationer/vare_overstreget2.svg" alt="" class="udsolgt" />
           <div class="box">SOLD OUT</div>
         </>
       )
@@ -65,11 +65,29 @@ const { header, soldOut, sale } = Astro.props;
     width: 300px;
     height: 400px;
   }
-  .img_container > *:not(.box) {
+  .img_container > *:not(.box):not(.box2) {
     width: 100%;
     height: 100%;
     align-self: center;
   }
+
+  .img_container .box,
+  .img_container .box2 {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background-color: var(--notThatBlack);
+    color: white;
+    padding: 10px;
+    font-family: var(--primary);
+  }
+
+  .img_container .box2 {
+    background-color: var(--accentColor);
+    padding-left: 9%;
+    padding-right: 9%;
+  }
+
   .img_container img {
     position: absolute;
     top: 0;

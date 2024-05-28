@@ -1,223 +1,225 @@
 ---
+
 ---
+
 <div class="collage">
-<div class="grid_collage">
-    <div class="pic1"><img src="public/img/collage1.webp" alt="collage"></div>
-    <div class="pic2"><img src="public/img/collage2.webp" alt="collage"></div>
-    <div class="pic3"><img src="public/img/collage3.webp" alt="collage"></div>
-    <div class="pic4"><img src="public/img/collage4.webp" alt="collage"></div>
-</div>
-<div class="tekst">
+  <div class="grid_collage">
+    <div class="pic1"><img src="img/collage1.webp" alt="collage" /></div>
+    <div class="pic2"><img src="img/collage2.webp" alt="collage" /></div>
+    <div class="pic3"><img src="img/collage3.webp" alt="collage" /></div>
+    <div class="pic4"><img src="img/collage4.webp" alt="collage" /></div>
+  </div>
+  <div class="tekst">
     <div class="div_tekst">
-<h1 class="join">JOIN THE HOOD</h1>
-<h5 class="sign_up">SIGN UP FOR OUR NEWSLETTER AND GET 10% OFF YOUR FIRST ORDER</h5>
-<form class="form">
-    <!-- Input-felt med pladsholder tekst -->
-    <input type="text" id="email" name="email" placeholder="DROP YOUR E-MAIL HERE...">
-    <!-- Knap -->
-    <button type="submit" class="sign-up-btn">SIGN UP</button>
-</form>
-<p class="terms">By signing up, you consent to The Panichood sending you newsletters. We never share your information with third parties. You can unsubscribe at any time via the link in our emails.</p>
-</div>
-</div>
+      <h1 class="join">JOIN THE HOOD</h1>
+      <h5 class="sign_up">SIGN UP FOR OUR NEWSLETTER AND GET 10% OFF YOUR FIRST ORDER</h5>
+      <form class="form">
+        <!-- Input-felt med pladsholder tekst -->
+        <input type="text" id="email" name="email" placeholder="DROP YOUR E-MAIL HERE..." />
+        <!-- Knap -->
+        <button type="submit" class="sign-up-btn">SIGN UP</button>
+      </form>
+      <p class="terms">By signing up, you consent to The Panichood sending you newsletters. We never share your information with third parties. You can unsubscribe at any time via the link in our emails.</p>
+    </div>
+  </div>
 </div>
 
 <style>
-    /* MOBIL */
-    @media screen and (max-width: 768px) {
+  /* MOBIL */
+  @media screen and (max-width: 768px) {
     .grid_collage {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        margin: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin: 50px;
     }
     .grid_collage img {
-            width: 100%; /* Gør billederne responsive */
-            height: auto; /* Bevarer billedets proportioner */
-            display: block; /* Fjerner mellemrum under billederne */
-        }
+      width: 100%; /* Gør billederne responsive */
+      height: auto; /* Bevarer billedets proportioner */
+      display: block; /* Fjerner mellemrum under billederne */
+    }
 
     /* POSTIION AF BILLEDER I COLLAGE */
     .pic1 {
-width: 70%;
-position: relative;
-left: 25%;
-top: 40%;
-background-color: transparent;
+      width: 70%;
+      position: relative;
+      left: 25%;
+      top: 40%;
+      background-color: transparent;
     }
     .pic2 {
-    width: 90%;   
-    position: relative;
-    left: -5%;
-    top: 30%;
-    background-color: transparent;
-}
+      width: 90%;
+      position: relative;
+      left: -5%;
+      top: 30%;
+      background-color: transparent;
+    }
 
     .pic3 {
-    width: 90%;   
-    position: relative;
-    left: 10%;
-    top: 10%;
-    background-color: transparent;
+      width: 90%;
+      position: relative;
+      left: 10%;
+      top: 10%;
+      background-color: transparent;
     }
 
     .pic4 {
-    width: 70%;   
-    position: relative;
-    left: 0%;
-    top: 30%;
-    background-color: transparent;
+      width: 70%;
+      position: relative;
+      left: 0%;
+      top: 30%;
+      background-color: transparent;
     }
     .tekst {
-       margin-left: 4rem;
-       margin-right: 4rem;
+      margin-left: 4rem;
+      margin-right: 4rem;
     }
     .join {
-        display: flex;
-        justify-content: center; /* Centrerer horisontalt */
-        align-items: center;
-        margin-bottom: 0.5rem;
-}
+      display: flex;
+      justify-content: center; /* Centrerer horisontalt */
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
     .sign_up {
-        display: flex;
-        justify-content: center; /* Centrerer horisontalt */
-        align-items: center;
-        margin-bottom: 1rem;
-}
-.form {
-            display: flex;
-            justify-content: center; /* Centrerer indholdet horisontalt */
-            align-items: center; /* Centrerer indholdet vertikalt */
-            gap: 4px; /* Afstand mellem input-feltet og knappen */
-        }
+      display: flex;
+      justify-content: center; /* Centrerer horisontalt */
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .form {
+      display: flex;
+      justify-content: center; /* Centrerer indholdet horisontalt */
+      align-items: center; /* Centrerer indholdet vertikalt */
+      gap: 4px; /* Afstand mellem input-feltet og knappen */
+    }
 
-        /* Styling af input-feltet */
-        .form input[type="text"] {
-            padding: 10px;
-            border: 2px solid #073F9C;
-            font-size: 16px;
-            width: 65%;
-        }
-        .sign-up-btn {
-            background-color: #fefefe; 
-            color: #073F9C; /* Blå tekstfarve */
-            padding: 10px 32px; /* Indre afstand */
-            text-align: center; /* Centrer tekst */
-            text-decoration: none; /* Fjern understregning */
-            font-size: 16px; /* Skriftstørrelse */
-            border: 2px solid #073F9C; /* Blå kant */
-            cursor: pointer; /* Pege-hånd ikon ved hover */
-            transition: background-color 0.3s ease; /* Glidende overgang ved hover */
-            flex: 0 0 auto; /* Knappen bevarer sin størrelse */
-        }
-.terms {
-    margin-top: 1rem;
-    margin-bottom: 5rem;
-}
-}
-/* DESKTOP */
-@media screen and (min-width: 768px) {
+    /* Styling af input-feltet */
+    .form input[type="text"] {
+      padding: 10px;
+      border: 2px solid #073f9c;
+      font-size: 16px;
+      width: 65%;
+    }
+    .sign-up-btn {
+      background-color: #fefefe;
+      color: #073f9c; /* Blå tekstfarve */
+      padding: 10px 32px; /* Indre afstand */
+      text-align: center; /* Centrer tekst */
+      text-decoration: none; /* Fjern understregning */
+      font-size: 16px; /* Skriftstørrelse */
+      border: 2px solid #073f9c; /* Blå kant */
+      cursor: pointer; /* Pege-hånd ikon ved hover */
+      transition: background-color 0.3s ease; /* Glidende overgang ved hover */
+      flex: 0 0 auto; /* Knappen bevarer sin størrelse */
+    }
+    .terms {
+      margin-top: 1rem;
+      margin-bottom: 5rem;
+    }
+  }
+  /* DESKTOP */
+  @media screen and (min-width: 768px) {
     .tekst {
-       margin-left: 0rem;
-       margin-right: 0rem;
-       margin-top: 0rem;
-       margin-bottom: 0rem;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       order: 1;
-       width: 75%;
+      margin-left: 0rem;
+      margin-right: 0rem;
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      order: 1;
+      width: 75%;
     }
     .join {
-        font-family: var(--primary);
-        font-weight: 800;
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-}
-.sign_up {
-    margin-bottom: 0.5rem;  
-}
-.terms {
-    font-family: var(--secondary);
-    font-weight: 400;
-    font-size: 0.8rem;
-    margin-top: 1rem;
-}
-
-        /* Styling af input-feltet */
-        .form input[type="text"] {
-            padding: 10px;
-            border: 2px solid #073F9C;
-            font-size: 16px;
-            width: 60%;
-        }
-        .sign-up-btn {
-            background-color: #fefefe; 
-            color: #073F9C; /* Blå tekstfarve */
-            padding: 10px 32px; /* Indre afstand */
-            text-align: center; /* Centrer tekst */
-            text-decoration: none; /* Fjern understregning */
-            font-size: 16px; /* Skriftstørrelse */
-            border: 2px solid #073F9C; /* Blå kant */
-            cursor: pointer; /* Pege-hånd ikon ved hover */
-            transition: background-color 0.3s ease; /* Glidende overgang ved hover */
-            flex: 0 0 auto; /* Knappen bevarer sin størrelse */
-        }
-
-        .grid_collage img {
-            width: 100%; /* Gør billederne responsive */
-            height: auto; /* Bevarer billedets proportioner */
-            display: block; /* Fjerner mellemrum under billederne */
-        }
-        .grid_collage {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        margin: 50px;
-        width: 50%;
-        order: 2;
+      font-family: var(--primary);
+      font-weight: 800;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
     }
-    
+    .sign_up {
+      margin-bottom: 0.5rem;
+    }
+    .terms {
+      font-family: var(--secondary);
+      font-weight: 400;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    /* Styling af input-feltet */
+    .form input[type="text"] {
+      padding: 10px;
+      border: 2px solid #073f9c;
+      font-size: 16px;
+      width: 60%;
+    }
+    .sign-up-btn {
+      background-color: #fefefe;
+      color: #073f9c; /* Blå tekstfarve */
+      padding: 10px 32px; /* Indre afstand */
+      text-align: center; /* Centrer tekst */
+      text-decoration: none; /* Fjern understregning */
+      font-size: 16px; /* Skriftstørrelse */
+      border: 2px solid #073f9c; /* Blå kant */
+      cursor: pointer; /* Pege-hånd ikon ved hover */
+      transition: background-color 0.3s ease; /* Glidende overgang ved hover */
+      flex: 0 0 auto; /* Knappen bevarer sin størrelse */
+    }
+
+    .grid_collage img {
+      width: 100%; /* Gør billederne responsive */
+      height: auto; /* Bevarer billedets proportioner */
+      display: block; /* Fjerner mellemrum under billederne */
+    }
+    .grid_collage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin: 0%;
+      width: 100%;
+      order: 2;
+    }
+
     .collage {
-        display: flex;
+      display: flex;
     }
 
     .div_tekst {
-        width: 50%;
-        text-align: center;
+      width: 50%;
+      text-align: center;
     }
 
     /* POSTIION AF BILLEDER I COLLAGE */
     .pic1 {
-width: 70%;
-position: relative;
-left: -20%;
-top: 40%;
-background-color: transparent;
+      width: 70%;
+      position: relative;
+      left: 20%;
+      top: 40%;
+      background-color: transparent;
     }
 
     .pic2 {
-    width: 90%;   
-    position: relative;
-    left: -50%;
-    top: 30%;
-    background-color: transparent;
-}
+      width: 90%;
+      position: relative;
+      left: -10%;
+      top: 30%;
+      background-color: transparent;
+    }
 
     .pic3 {
-    width: 90%;   
-    position: relative;
-    left: -35%;
-    top: 10%;
-    background-color: transparent;
+      width: 90%;
+      position: relative;
+      left: 0%;
+      top: 10%;
+      background-color: transparent;
     }
 
     .pic4 {
-    width: 70%;   
-    position: relative;
-    left: -45%;
-    top: 30%;
-    background-color: transparent;
+      width: 70%;
+      position: relative;
+      left: -10%;
+      top: 30%;
+      background-color: transparent;
     }
-}
+  }
 </style>

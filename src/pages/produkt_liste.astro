@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Card_products from "../components/Card_products.astro";
-import GetInspired from "../components/Get_inspired.astro";
+import Collage from "../components/Collage.astro";
 ---
 
 <Layout title="PanicHood">
@@ -15,16 +15,16 @@ import GetInspired from "../components/Get_inspired.astro";
     <h1>PRODUCTS</h1>
     <section class="trending_now">
       <div>
-        <img src="../../public/img/emil_croped.webp" alt="" />
+        <img src="../../img/emil_croped.webp" alt="" />
       </div>
       <div class="trending_now_text">
         <h2>TRENDING NOW</h2>
-        <img src="../../public/illustrationer/pil_product_list.svg" alt="" />
+        <img src="../../illustrationer/pil_product_list.svg" alt="" />
       </div>
     </section>
     <div class="filter_produkter">
       <div class="filter">
-        <img src="../../public/ikoner/Filter.png" alt="" />
+        <img src="../../ikoner/Filter.png" alt="" />
         <p>FILTER</p>
       </div>
       <p>20 PRODUCTS</p>
@@ -37,7 +37,7 @@ import GetInspired from "../components/Get_inspired.astro";
       <Card_products header="TPH TOTE BAG " />
       <Card_products header="PANIC DEALER TEE" />
     </section>
-    <GetInspired />
+    <Collage />
   </main>
   <Footer />
 </Layout>
