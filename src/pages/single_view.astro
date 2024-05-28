@@ -14,7 +14,7 @@ import Tenoff from "../components/Tenoff.astro";
 
 <Layout title="PanicHood">
     <Header />
-<main>
+<main class="product-page">
     <p><a href="">Home</a> / <a href="">Products</a> / <a href="">Panic Dealer Tee</a></p>
     <div class="grid1_1">
         
@@ -88,6 +88,25 @@ a {
     margin-top: 10%;
 }
 
+@media (max-width: 800px) {
+    .product-page .grid1_1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-page .grid1_1 .h1 {
+        order: 1;
+    }
+
+    .product-page .grid1_1 .tee1_front {
+        order: 2;
+    }
+
+    .product-page .grid1_1 .text {
+        order: 3;
+    }
+}
 </style>
 
 
