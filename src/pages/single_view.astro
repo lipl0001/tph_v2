@@ -1,0 +1,95 @@
+---
+import "../styles/global.css";
+import "../styles/style.css";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero_video from "../components/Hero_video.astro";
+import Quote from "../components/Quote.astro";
+import New_season from "../components/New_season.astro";
+import Footer from "../components/Footer.astro";
+import Collage from "../components/Collage.astro";
+import Tenoff from "../components/Tenoff.astro"; 
+
+---
+
+<Layout title="PanicHood">
+    <Header />
+<main>
+    <p><a href="">Home</a> / <a href="">Products</a> / <a href="">Panic Dealer Tee</a></p>
+    <div class="grid1_1">
+        
+<img src="../../public/img/tee1_front.webp" alt="tee1_front" class="tee1_front">
+
+<div class="text">
+    <h1 class="h1">PANIC DEALER TEE</h1>
+    <h3 class="pris">343 DKK</h3>
+        <p class="beskrivelse">
+            Tax included. Shipping calculated at checkout. <br> <br>
+            Oversized, unisex and made of 100% cotton, offering a soft embrace for the skin. <br> <br>
+The model is 1.91 CM. and wearing a size M.
+
+        </p>
+
+</div>
+    </div>
+     <img src="../../public/img/sizechart.webp" alt="sizechart" class="sizechart">
+
+<Collage />
+</main>
+<Footer />
+
+
+
+
+</Layout>
+
+
+
+<style>
+main {
+    padding: 4rem;
+  }
+a {
+    text-decoration: none;
+    color: var(--oliveGrey);
+  }
+  
+  img {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 3rem;
+   margin: 0%
+    
+  }
+.grid1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10%;
+    
+}
+
+.beskrivelse {
+    margin-top: 5%;
+}
+
+.sizechart {
+    margin-top: 10%;
+    width: 102%;
+    border: 1px solid black; /* Ændr bredden efter behov */
+}
+
+.tee1_front {
+    margin-bottom: 20%
+}
+
+.pris {
+    margin-top: 10%;
+}
+
+</style>
+
+
+
+
