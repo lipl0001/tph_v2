@@ -21,14 +21,18 @@ import Tenoff from "../components/Tenoff.astro";
 
     <div class="grid-container">
       <div class="item item1">
-        <img src="../../public/img/OURMISSION.webp" alt="Venstre Billede" />
+        <img src="../../img/OURMISSION.webp" alt="Venstre Billede" />
       </div>
       <div class="grid_1-1">
         <div class="item item2">
-          <img src="../../public/img/mission1.webp" alt="Øvre Højre Billede" />
+          <img src="../../img/mission1.webp" alt="Øvre Højre Billede" />
         </div>
         <div class="item item3">
+<<<<<<< HEAD
           <img src="../../public/img/tee1_front.webp" alt="Nedre Højre Billede" />
+=======
+          <img src="../../img/mission2.webp" alt="Nedre Højre Billede" />
+>>>>>>> 61938f6bf5352adcbf0c9ffeaa42847a312f1bf2
         </div>
       </div>
 
@@ -56,7 +60,7 @@ import Tenoff from "../components/Tenoff.astro";
           </div>
         </div>
         <div class="img_community">
-          <img class="board" src="../../public/illustrationer/tekst_board.svg" alt="" />
+          <img class="board" src="../../illustrationer/tekst_board.svg" alt="" />
         </div>
       </div>
     </div>
@@ -74,7 +78,8 @@ import Tenoff from "../components/Tenoff.astro";
 
   .item img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
 
   .item2 {
@@ -217,7 +222,7 @@ import Tenoff from "../components/Tenoff.astro";
       display: inline-block; /* eller block afhængigt af dine behov */
       width: 57px; /* Angiv den ønskede bredde */
       height: 19px; /* Angiv den ønskede højde */
-      background-image: url(../../public/illustrationer/tekst_ring.svg);
+      background-image: url(../../illustrationer/tekst_ring.svg);
       background-size: contain; /* Sørger for at billedet passer ind i elementet */
       background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
     }
@@ -225,7 +230,7 @@ import Tenoff from "../components/Tenoff.astro";
       display: inline-block; /* eller block afhængigt af dine behov */
       width: 41px; /* Angiv den ønskede bredde */
       height: 25px; /* Angiv den ønskede højde */
-      background-image: url(../../public/illustrationer/tekst_krussedulle.svg);
+      background-image: url(../../illustrationer/tekst_krussedulle.svg);
       background-size: contain; /* Sørger for at billedet passer ind i elementet */
       background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
     }

@@ -1,33 +1,35 @@
 ---
-const { header, soldOut, sale } = Astro.props;
+const { data } = Astro.props;
+console.log(data);
 ---
 
 <article>
   <div class="img_container">
-    <img src="../../public/img/tee2_front.webp" alt="" />
+    <img src={data.front} alt="" class="default-img" />
+    <img src={data.back} alt="" class="hover-img" />
     {
-      soldOut && (
+      data.soldout && (
         <>
-          <img src="../../public/illustrationer/vare_overstreget2.svg" alt="" class="udsolgt" />
-          <div class="box">SOLD OUT</div>
+          <img src="../../illustrationer/vare_overstreget2.svg" alt="" class="udsolgt" />
+          <div class="box">Sold out</div>
         </>
       )
     }
     {
-      sale && (
+      data.sale && (
         <>
-          <div class="box2">SALE</div>
+          <div class="box2">On sale</div>
         </>
       )
     }
   </div>
   <div class="info">
-    <p class="navn">{header}</p>
+    <p class="navn">{data.name}</p>
 
     <!--Med hjælp fra chat GPT-->
     <div class="pris">
-      <p class={`original_pris ${sale ? "sale" : ""}`}>343,-</p>
-      {sale && <p>299,-</p>}
+      <p class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price + " DKK"}</p>
+      {data.sale && <p>{data.discountprice} DKK</p>}
     </div>
   </div>
 </article>
@@ -40,6 +42,17 @@ const { header, soldOut, sale } = Astro.props;
   }
   img {
     width: 100%;
+  }
+  .img_container .hover-img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .img_container:hover .hover-img {
+    opacity: 1;
+  }
+
+  .img_container:hover .default-img {
+    opacity: 0;
   }
 
   .navn {
@@ -54,8 +67,8 @@ const { header, soldOut, sale } = Astro.props;
   .sale {
     display: inline-block; /* eller block afhængigt af dine behov */
     width: 41px; /* Angiv den ønskede bredde */
-    height: 25px; /* Angiv den ønskede højde */
-    background-image: url(../../public/illustrationer/tekst_krussedulle.svg);
+    height: 19px; /* Angiv den ønskede højde */
+    background-image: url(../../illustrationer/tekst_krussedulle.svg);
     background-size: contain; /* Sørger for at billedet passer ind i elementet */
     background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
   }
@@ -65,11 +78,29 @@ const { header, soldOut, sale } = Astro.props;
     width: 300px;
     height: 400px;
   }
-  .img_container > *:not(.box) {
+  .img_container > *:not(.box):not(.box2) {
     width: 100%;
     height: 100%;
     align-self: center;
   }
+
+  .img_container .box,
+  .img_container .box2 {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background-color: var(--notThatBlack);
+    color: white;
+    padding: 10px;
+    font-family: var(--primary);
+  }
+
+  .img_container .box2 {
+    background-color: var(--accentColor);
+    padding-left: 9%;
+    padding-right: 9%;
+  }
+
   .img_container img {
     position: absolute;
     top: 0;
