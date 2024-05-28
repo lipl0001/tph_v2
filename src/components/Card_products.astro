@@ -3,38 +3,45 @@ const { data } = Astro.props;
 console.log(data);
 ---
 
-<article>
-  <div class="img_container">
-    <img src={data.front} alt="" class="default-img" />
-    <img src={data.back} alt="" class="hover-img" />
-    {
-      data.soldout && (
-        <>
-          <img src="../../illustrationer/vare_overstreget2.svg" alt="" class="udsolgt" />
-          <div class="box">Sold out</div>
-        </>
-      )
-    }
-    {
-      data.sale && (
-        <>
-          <div class="box2">On sale</div>
-        </>
-      )
-    }
-  </div>
-  <div class="info">
-    <p class="navn">{data.name}</p>
-
-    <!--Med hjælp fra chat GPT-->
-    <div class="pris">
-      <p class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price + " DKK"}</p>
-      {data.sale && <p>{data.discountprice} DKK</p>}
+<a href={`products/${data.slug}`}>
+  <article>
+    <div class="img_container">
+      <img src={data.front} alt="" class="default-img" />
+      <img src={data.back} alt="" class="hover-img" />
+      {
+        data.soldout && (
+          <>
+            <img src="../../illustrationer/vare_overstreget2.svg" alt="" class="udsolgt" />
+            <div class="box">Sold out</div>
+          </>
+        )
+      }
+      {
+        data.sale && (
+          <>
+            <div class="box2">On sale</div>
+          </>
+        )
+      }
     </div>
-  </div>
-</article>
+    <div class="info">
+      <p class="navn">{data.name}</p>
+
+      <!--Med hjælp fra chat GPT-->
+      <div class="pris">
+        <p class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price + " DKK"}</p>
+        {data.sale && <p>{data.discountprice} DKK</p>}
+      </div>
+    </div>
+  </article>
+</a>
 
 <style>
+  a {
+    text-decoration: none;
+    color: var(--notThatBlack);
+  }
+
   article {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,24 @@
+---
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const response = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtjeWFmZHJ4aGRxeGpwdXRxanhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY1NDgyNjgsImV4cCI6MjAzMjEyNDI2OH0.Ds4oUM3yPKNH5mMMKKLDh3QmQ1iTPuS-sqllkSvXaY4",
+    },
+  });
+  const data = await response.json();
+
+  const newData = data.map((product) => {
+    return { params: { slug: product.slug }, props: { data: product } };
+  });
+
+  //console.log(newData);
+  return newData;
+}
+
+const { id } = Astro.params;
+const { data } = Astro.props;
+console.log(data);
+---
