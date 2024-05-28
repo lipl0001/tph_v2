@@ -1,5 +1,14 @@
 ---
+import Card_products from "../components/Card_products.astro";
 
+const data = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items?soldout=is.null&sale=is.null", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtjeWFmZHJ4aGRxeGpwdXRxanhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY1NDgyNjgsImV4cCI6MjAzMjEyNDI2OH0.Ds4oUM3yPKNH5mMMKKLDh3QmQ1iTPuS-sqllkSvXaY4",
+  },
+}).then((res) => res.json());
+
+console.log(data);
 ---
 
 <section>
@@ -15,13 +24,11 @@
     <div class="container">
       <div class="carousel-view">
         <div id="item-list" class="item-list">
-          <img id="item" class="item" src="https://images.unsplash.com/photo-1662466818758-0e299f92591a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjQ3ODc1NDY&ixlib=rb-1.2.1&q=80" />
-          <img id="item" class="item" src="https://images.unsplash.com/photo-1662466818758-0e299f92591a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjQ3ODc1NDY&ixlib=rb-1.2.1&q=80" />
-          <img id="item" class="item" src="https://images.unsplash.com/photo-1662466818758-0e299f92591a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjQ3ODc1NDY&ixlib=rb-1.2.1&q=80" />
-          <img id="item" class="item" src="https://images.unsplash.com/photo-1662466818758-0e299f92591a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjQ3ODc1NDY&ixlib=rb-1.2.1&q=80" />
-          <img id="item" class="item" src="https://images.unsplash.com/photo-1662466818758-0e299f92591a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjQ3ODc1NDY&ixlib=rb-1.2.1&q=80" />
-          <img id="item" class="item" src="https://images.unsplash.com/photo-1662466818758-0e299f92591a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjQ3ODc1NDY&ixlib=rb-1.2.1&q=80" />
-          <img id="item" class="item" src="https://images.unsplash.com/photo-1662466818758-0e299f92591a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjQ3ODc1NDY&ixlib=rb-1.2.1&q=80" />
+          {
+            data.map((product) => {
+              return <Card_products data={product} />;
+            })
+          }
         </div>
         <button id="next-btn" class="next-btn"> <img src="../../ikoner/pil.png" alt="" /> </button>
       </div>
@@ -108,7 +115,7 @@
   .next-btn {
     cursor: pointer;
     position: absolute;
-    right: 0%;
+    right: 2.5%;
     z-index: 1;
   }
 

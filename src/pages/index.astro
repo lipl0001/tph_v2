@@ -9,15 +9,6 @@ import New_season from "../components/New_season.astro";
 import Footer from "../components/Footer.astro";
 import Collage from "../components/Collage.astro";
 import Tenoff from "../components/Tenoff.astro";
-
-const data = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items", {
-  method: "GET",
-  headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtjeWFmZHJ4aGRxeGpwdXRxanhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY1NDgyNjgsImV4cCI6MjAzMjEyNDI2OH0.Ds4oUM3yPKNH5mMMKKLDh3QmQ1iTPuS-sqllkSvXaY4",
-  },
-}).then((res) => res.json());
-
-console.log(data);
 ---
 
 <Layout title="PanicHood">
@@ -83,7 +74,8 @@ console.log(data);
 
   .item img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
 
   .item2 {

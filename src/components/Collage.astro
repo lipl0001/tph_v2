@@ -26,12 +26,12 @@
 
 <style>
   /* MOBIL */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     .grid_collage {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      margin: 50px;
+      margin: 1%;
     }
     .grid_collage img {
       width: 100%; /* Gør billederne responsive */
@@ -44,14 +44,14 @@
       width: 70%;
       position: relative;
       left: 25%;
-      top: 40%;
+      top: 20%;
       background-color: transparent;
     }
     .pic2 {
       width: 90%;
       position: relative;
       left: -5%;
-      top: 30%;
+      top: 10%;
       background-color: transparent;
     }
 
@@ -59,7 +59,7 @@
       width: 90%;
       position: relative;
       left: 10%;
-      top: 10%;
+      top: -10%;
       background-color: transparent;
     }
 
@@ -67,7 +67,7 @@
       width: 70%;
       position: relative;
       left: 0%;
-      top: 30%;
+      top: 10%;
       background-color: transparent;
     }
     .tekst {
@@ -118,7 +118,10 @@
     }
   }
   /* DESKTOP */
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 800px) {
+    .collage {
+      margin-bottom: 4%;
+    }
     .tekst {
       margin-left: 0rem;
       margin-right: 0rem;
@@ -128,7 +131,7 @@
       align-items: center;
       justify-content: center;
       order: 1;
-      width: 75%;
+      width: 100%;
     }
     .join {
       font-family: var(--primary);
@@ -148,7 +151,7 @@
 
     /* Styling af input-feltet */
     .form input[type="text"] {
-      padding: 10px;
+      padding: 2.5%;
       border: 2px solid #073f9c;
       font-size: 16px;
       width: 60%;
@@ -156,7 +159,7 @@
     .sign-up-btn {
       background-color: #fefefe;
       color: #073f9c; /* Blå tekstfarve */
-      padding: 10px 32px; /* Indre afstand */
+      padding: 2.5% 1%; /* Indre afstand */
       text-align: center; /* Centrer tekst */
       text-decoration: none; /* Fjern understregning */
       font-size: 16px; /* Skriftstørrelse */
@@ -167,9 +170,9 @@
     }
 
     .grid_collage img {
-      width: 100%; /* Gør billederne responsive */
-      height: auto; /* Bevarer billedets proportioner */
-      display: block; /* Fjerner mellemrum under billederne */
+      width: 80%;
+      height: auto;
+      display: block;
     }
     .grid_collage {
       display: grid;
@@ -193,8 +196,8 @@
     .pic1 {
       width: 70%;
       position: relative;
-      left: 20%;
-      top: 40%;
+      left: 34%;
+      top: 22%;
       background-color: transparent;
     }
 
@@ -202,15 +205,15 @@
       width: 90%;
       position: relative;
       left: -10%;
-      top: 30%;
+      top: 12%;
       background-color: transparent;
     }
 
     .pic3 {
       width: 90%;
       position: relative;
-      left: 0%;
-      top: 10%;
+      left: 18%;
+      top: -8%;
       background-color: transparent;
     }
 
@@ -218,7 +221,7 @@
       width: 70%;
       position: relative;
       left: -10%;
-      top: 30%;
+      top: 12%;
       background-color: transparent;
     }
   }
