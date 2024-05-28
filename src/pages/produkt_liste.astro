@@ -31,7 +31,7 @@ import Card_products from "../components/Card_products.astro";
     <section class="layout_produkt">
       <Card_products header="PANIC DEALER TEE" />
       <Card_products header="TPH CARD TEE" soldOut={true} />
-      <Card_products header="CRISSCROSS TEE" />
+      <Card_products header="CRISSCROSS TEE" sale={true} />
       <Card_products header="STARFISH PUFF TEE " />
       <Card_products header="TPH TOTE BAG " />
       <Card_products header="PANIC DEALER TEE" />
@@ -105,9 +105,6 @@ import Card_products from "../components/Card_products.astro";
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding-top: 3%;
-    gap: 6%;
-    padding-right: 7%;
-    padding-left: 7%;
   }
 </style>
 
