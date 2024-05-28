@@ -18,11 +18,222 @@ import Tenoff from "../components/Tenoff.astro";
     <Hero_video />
     <New_season />
     <Quote />
-    <Collage />
-    <Footer />
+
+    <div class="grid-container">
+      <div class="item item1">
+        <img src="../../public/img/OURMISSION.webp" alt="Venstre Billede" />
+      </div>
+      <div class="grid_1-1">
+        <div class="item item2">
+          <img src="../../public/img/mission1.webp" alt="Øvre Højre Billede" />
+        </div>
+        <div class="item item3">
+          <img src="../../public/img/mission2.webp" alt="Nedre Højre Billede" />
+        </div>
+      </div>
+
+      <div class="ourmission">
+        <div class="grid_values">
+          <div class="community">
+            <div class="text_community">
+              <h2>COMMUNITY</h2>
+              <p>Our brand is all about unity and understanding. We're a family that appreciates the realness of 'the hood' and embraces everyone as they are.</p>
+            </div>
+          </div>
+
+          <div class="impact">
+            <div class="text_impact">
+              <h2>IMPACT</h2>
+              <p>With 'Panic' in our name, we acknowledge the lively rush of life and our <span class="tekst_ring">goal to</span> disrupt the norms. We strive for fashion to be about personal expression, not conformity.</p>
+            </div>
+          </div>
+
+          <div class="being_yourself">
+            <div class="text_being_yourself">
+              <h2>BEING YOURSELF</h2>
+              <p>Choosing TPH means showing up as you are, unapologetic and genuine. It's about living your truth and embracing every bit of your unique <span class="krussedulle">hello</span> self.</p>
+            </div>
+          </div>
+        </div>
+        <div class="img_community">
+          <img class="board" src="../../public/illustrationer/tekst_board.svg" alt="" />
+        </div>
+      </div>
+    </div>
   </main>
+  <Collage />
+  <Footer />
 </Layout>
 
-<style></style>
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .item2 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+  }
+
+  .item3 {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .community {
+    width: 50%;
+  }
+
+  .being_yourself {
+    width: 50%;
+  }
+
+  .grid_values {
+    margin: 2rem;
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+  }
+
+  .img_community {
+    position: absolute;
+    width: 200px;
+    background-color: transparent;
+    right: 3%;
+  }
+
+  .img_community img {
+    width: 100%;
+    background-color: transparent;
+  }
+
+  .text_impact {
+    margin-top: 2rem;
+    width: 90%;
+    align-content: end;
+    width: 60%;
+  }
+
+  .impact {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .being_yourself {
+    margin-top: 2rem;
+  }
+
+  .ourmission {
+    display: flex;
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+  }
+
+  @media (min-width: 800px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 2px solid var(--oliveGrey);
+    }
+
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .item1 {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 2;
+    }
+    .item2 {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+    }
+
+    .item3 {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }
+
+    .grid_values {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+      margin-left: 5%;
+      margin-right: 0%;
+    }
+
+    .impact {
+      margin-top: 0%;
+      display: inline;
+    }
+
+    .text_impact {
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+
+    .being_yourself {
+      display: inline;
+    }
+
+    .text_being_yourself {
+      width: 100%;
+    }
+
+    .grid_values p,
+    h2 {
+      margin: 0%;
+    }
+
+    .community {
+      width: 82%;
+    }
+
+    .img_community {
+      width: 30%;
+    }
+
+    .ourmission {
+      display: flex;
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+    }
+    .img_community {
+      width: 120px;
+      height: auto;
+      position: absolute;
+      padding-top: 2%;
+      right: 1.7%;
+    }
+
+    .tekst_ring {
+      display: inline-block; /* eller block afhængigt af dine behov */
+      width: 57px; /* Angiv den ønskede bredde */
+      height: 19px; /* Angiv den ønskede højde */
+      background-image: url(../../public/illustrationer/tekst_ring.svg);
+      background-size: contain; /* Sørger for at billedet passer ind i elementet */
+      background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
+    }
+    .krussedulle {
+      display: inline-block; /* eller block afhængigt af dine behov */
+      width: 41px; /* Angiv den ønskede bredde */
+      height: 25px; /* Angiv den ønskede højde */
+      background-image: url(../../public/illustrationer/tekst_krussedulle.svg);
+      background-size: contain; /* Sørger for at billedet passer ind i elementet */
+      background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
+    }
+
+    .text_community {
+      max-width: 90%;
+    }
+  }
+</style>
 
 <script></script>

@@ -1,0 +1,94 @@
+---
+const { header, soldOut, sale } = Astro.props;
+---
+
+<article>
+  <div class="img_container">
+    <img src="../../public/img/tee2_front.webp" alt="" />
+    {
+      soldOut && (
+        <>
+          <img src="../../public/illustrationer/vare_overstreget2.svg" alt="" class="udsolgt" />
+          <div class="box">SOLD OUT</div>
+        </>
+      )
+    }
+    {
+      sale && (
+        <>
+          <div class="box2">SALE</div>
+        </>
+      )
+    }
+  </div>
+  <div class="info">
+    <p class="navn">{header}</p>
+
+    <!--Med hjælp fra chat GPT-->
+    <div class="pris">
+      <p class={`original_pris ${sale ? "sale" : ""}`}>343,-</p>
+      {sale && <p>299,-</p>}
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  img {
+    width: 100%;
+  }
+
+  .navn {
+    padding-top: 1%;
+    font-weight: bold;
+  }
+
+  .pris {
+    padding-top: 1%;
+    display: flex;
+  }
+  .sale {
+    display: inline-block; /* eller block afhængigt af dine behov */
+    width: 41px; /* Angiv den ønskede bredde */
+    height: 25px; /* Angiv den ønskede højde */
+    background-image: url(../../public/illustrationer/tekst_krussedulle.svg);
+    background-size: contain; /* Sørger for at billedet passer ind i elementet */
+    background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
+  }
+
+  .img_container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+  }
+  .img_container > *:not(.box) {
+    width: 100%;
+    height: 100%;
+    align-self: center;
+  }
+  .img_container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .img_container .box {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background-color: var(--notThatBlack);
+    color: white;
+    padding: 10px;
+    font-family: var(--primary);
+  }
+
+  .udsolgt {
+    background-color: transparent;
+  }
+</style>

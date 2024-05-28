@@ -37,6 +37,12 @@ font-family: var(--primary);
 font-weight: 300;
 }*/
 
+  h5 {
+    font-family: var(--primary);
+    font-weight: 400;
+    font-size: 1.25rem;
+  }
+
   p {
     font-family: var(--secondary);
     font-weight: 400;
@@ -50,5 +56,17 @@ font-weight: 300;
     font-family: var(--primary);
     font-weight: 800;
     font-size: 2.5rem;
+  }
+
+  h5 {
+    font-family: var(--primary);
+    font-weight: 400;
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-family: var(--secondary);
+    font-weight: 400;
+    font-size: 0.8rem;
   }
 }
