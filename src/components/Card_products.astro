@@ -1,12 +1,14 @@
 ---
-const { header, soldOut, sale } = Astro.props;
+const { data } = Astro.props;
+console.log(data);
 ---
 
 <article>
   <div class="img_container">
-    <img src="../../img/tee2_front.webp" alt="" />
+    <img src={data.front} alt="" class="default-img" />
+    <img src={data.back} alt="" class="hover-img" />
     {
-      soldOut && (
+      data.soldout && (
         <>
           <img src="../../illustrationer/vare_overstreget2.svg" alt="" class="udsolgt" />
           <div class="box">SOLD OUT</div>
@@ -14,7 +16,7 @@ const { header, soldOut, sale } = Astro.props;
       )
     }
     {
-      sale && (
+      data.sale && (
         <>
           <div class="box2">SALE</div>
         </>
@@ -22,12 +24,12 @@ const { header, soldOut, sale } = Astro.props;
     }
   </div>
   <div class="info">
-    <p class="navn">{header}</p>
+    <p class="navn">{data.name}</p>
 
     <!--Med hjælp fra chat GPT-->
     <div class="pris">
-      <p class={`original_pris ${sale ? "sale" : ""}`}>343,-</p>
-      {sale && <p>299,-</p>}
+      <p class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price + " DKK"}</p>
+      {data.sale && <p>{data.discountprice} DKK</p>}
     </div>
   </div>
 </article>
@@ -40,6 +42,17 @@ const { header, soldOut, sale } = Astro.props;
   }
   img {
     width: 100%;
+  }
+  .img_container .hover-img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .img_container:hover .hover-img {
+    opacity: 1;
+  }
+
+  .img_container:hover .default-img {
+    opacity: 0;
   }
 
   .navn {
@@ -54,8 +67,8 @@ const { header, soldOut, sale } = Astro.props;
   .sale {
     display: inline-block; /* eller block afhængigt af dine behov */
     width: 41px; /* Angiv den ønskede bredde */
-    height: 25px; /* Angiv den ønskede højde */
-    background-image: url(../../public/illustrationer/tekst_krussedulle.svg);
+    height: 19px; /* Angiv den ønskede højde */
+    background-image: url(../../illustrationer/tekst_krussedulle.svg);
     background-size: contain; /* Sørger for at billedet passer ind i elementet */
     background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
   }

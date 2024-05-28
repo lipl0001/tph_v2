@@ -6,6 +6,14 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Card_products from "../components/Card_products.astro";
 import Collage from "../components/Collage.astro";
+import CardProducts from "../components/Card_products.astro";
+
+const data = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtjeWFmZHJ4aGRxeGpwdXRxanhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY1NDgyNjgsImV4cCI6MjAzMjEyNDI2OH0.Ds4oUM3yPKNH5mMMKKLDh3QmQ1iTPuS-sqllkSvXaY4",
+  },
+}).then((res) => res.json());
 ---
 
 <Layout title="PanicHood">
@@ -30,12 +38,11 @@ import Collage from "../components/Collage.astro";
       <p>20 PRODUCTS</p>
     </div>
     <section class="layout_produkt">
-      <Card_products header="PANIC DEALER TEE" />
-      <Card_products header="TPH CARD TEE" soldOut={true} />
-      <Card_products header="CRISSCROSS TEE" sale={true} />
-      <Card_products header="STARFISH PUFF TEE " />
-      <Card_products header="TPH TOTE BAG " />
-      <Card_products header="PANIC DEALER TEE" />
+      {
+        data.map((product) => {
+          return <Card_products data={product} />;
+        })
+      }
     </section>
     <Collage />
   </main>
@@ -44,7 +51,7 @@ import Collage from "../components/Collage.astro";
 
 <style>
   main {
-    padding: 4rem;
+    margin: 4rem;
   }
 
   a {
