@@ -5,6 +5,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Collage from "../../components/Collage.astro";
 import Footer from "../../components/Footer.astro";
+import Get_inspired from "../../components/Get_inspired.astro";
 
 export async function getStaticPaths() {
   const response = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items", {
@@ -33,6 +34,8 @@ console.log(data);
   <main class="product-page">
     <p><a href="">Home</a> / <a href="">Products</a> / <a href="">{data.name}</a></p>
     <div class="grid1_1">
+                <h1 class="h1_mobil">{data.name}</h1>
+
       <img src={data.front} alt="tee1_front" class="tee1_front" />
       <div class="text">
         <div class="panic_dealer_tee">
@@ -62,12 +65,16 @@ console.log(data);
       </div>
     </div>
     <img src="../../public/img/sizechart.webp" alt="sizechart" class="sizechart" />
-    <Collage />
+    <Get_inspired />
   </main>
   <Footer />
 </Layout>
 
 <style>
+
+  .h1_mobil {
+    display: none;
+  }
   main {
     padding: 4rem;
   }
@@ -114,18 +121,18 @@ console.log(data);
 
   .sizes {
     display: flex;
-    gap: 10px;
+    gap: 23px;
   }
 
   .size {
-    padding: 10px;
+    padding: 13px;
     border: 1px solid #000;
     background-color: #fff;
     cursor: pointer;
   }
 
   .size.selected {
-    background-color: #000;
+    background-color: #073F9C;
     color: #fff;
   }
 
@@ -136,22 +143,27 @@ console.log(data);
   }
 
   .quantity-selector button {
-    padding: 10px;
+    padding: 13px;
     border: 1px solid #000;
     background-color: #fff;
     cursor: pointer;
   }
 
   #add-to-cart {
-    padding: 10px 20px;
-    background-color: #0033cc;
+    padding: 13px 10px;
+    background-color: #073F9C;
     color: #fff;
     border: none;
     cursor: pointer;
+   position: relative;
+   top: -55px;
+   left: 125px;
+    
+    
   }
 
   #add-to-cart:hover {
-    background-color: #002299;
+    background-color: #073F9C;
   }
 
   @media (max-width: 800px) {
@@ -187,7 +199,16 @@ console.log(data);
     .sizechart {
       width: 100%;
     }
+
+    .h1 {
+      display: none;
+    }
+
+    .h1_mobil {
+      display: block;
+    }
   }
+
 </style>
 
 <script>
