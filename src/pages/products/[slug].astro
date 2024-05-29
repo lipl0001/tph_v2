@@ -32,12 +32,15 @@ console.log(data);
 <Layout title="PanicHood">
   <Header />
   <main class="product-page">
-    <p><a href="">Home</a> / <a href="">Products</a> / <a href="">{data.name}</a></p>
+    <p><a href="">Home</a> / <a href="">Products</a> / <a href="">{data.brodkrumme}</a></p>
     <div class="grid1_1">
       <h1 class="h1_mobil">{data.name}</h1>
       <div class="img_container">
-        <img src={data.front} alt="tee1_front" class="tee1_front" />
+        <img src={data.front} alt="tee1_front" class="tee1_front active" />
+        <img src={data.bigfront} alt="tee1_front" class="tee2_front" />
+        <img src={data.back} alt="tee1_front" class="tee3_front" />
       </div>
+      <button id="next-btn" class="next-btn"> <img src="../../ikoner/pil.png" alt="" /> </button>
       <div class="text">
         <div class="panic_dealer_tee">
           <h1 class="h1">{data.name}</h1>
@@ -110,7 +113,31 @@ console.log(data);
 
   img {
     width: 80%;
+    background-color: transparent;
   }
+  .img_container {
+    position: relative;
+  }
+
+  .img_container img {
+    display: none;
+  }
+  .img_container img.active {
+    display: block;
+  }
+
+  .next-btn {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    border: 0px;
+    justify-content: center;
+    background-color: transparent;
+    margin-top: 18%;
+    width: 5%;
+    left: 41%;
+  }
+
   h1 {
     font-size: 3rem;
     margin: 0%;
@@ -310,6 +337,18 @@ console.log(data);
       width: 100%; /* Fyld hele bredden på mindre skærme */
     }
 
+    .next-btn {
+      cursor: pointer;
+      position: absolute;
+      z-index: 1;
+      border: 0px;
+      justify-content: center;
+      background-color: transparent;
+      margin-top: 60%;
+      width: 10%;
+      left: 85%;
+    }
+
     .product-page .grid1_1 {
       display: flex;
       flex-direction: column;
@@ -319,7 +358,7 @@ console.log(data);
       order: -1;
     }
 
-    .product-page .grid1_1 .tee1_front {
+    .product-page .grid1_1 .img_container {
       order: 1;
       margin-bottom: 2rem;
       width: 100%;
@@ -393,6 +432,17 @@ console.log(data);
     document.getElementById("increase").addEventListener("click", function () {
       quantity++;
       quantityElement.textContent = quantity;
+    });
+
+    // Image slider functionality
+    const images = document.querySelectorAll(".img_container img");
+    const nextBtn = document.getElementById("next-btn");
+    let currentIndex = 0;
+
+    nextBtn.addEventListener("click", function () {
+      images[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add("active");
     });
   });
 </script>
