@@ -1,19 +1,19 @@
 ---
-
+const { data } = Astro.props;
 ---
 
 <div class="grid_1">
   <h1 class="get_inspired">GET INSPIRED</h1>
   <p class="tekst">Find more inspiration at our Instagram <a href="https://www.instagram.com/thepanichood" target="_blank">@thepanichood</a></p>
   <div class="billede1">
-    <img src="../../img/getinspired2.webp" />
-    <p class="name">PANIC DEALER TEE</p>
-    <p class="price">343,-</p>
+    <img src={data.get_inspired1} />
+    <p class="name">{data.inspired_title1}</p>
+    <p class="price">{data.inspireprice1}</p>
   </div>
   <div class="billede2">
-    <img src="../../img/getinspired4.webp" />
-    <p class="name">HOODIE</p>
-    <p class="price">400,-</p>
+    <img src={data.get_inspired2} />
+    <p class="name">{data.inspired_title2}</p>
+    <p class="price">{data.inspireprice2} DKK</p>
   </div>
 </div>
 

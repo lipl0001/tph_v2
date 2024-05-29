@@ -29,13 +29,14 @@
   h2 {
     font-family: var(--primary);
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
-  /*h2 #thin {
-font-family: var(--primary);
-font-weight: 300;
-}*/
+  h3 {
+     font-family: var(--primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
 
   h5 {
     font-family: var(--primary);

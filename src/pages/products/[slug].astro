@@ -34,20 +34,23 @@ console.log(data);
   <main class="product-page">
     <p><a href="">Home</a> / <a href="">Products</a> / <a href="">{data.name}</a></p>
     <div class="grid1_1">
-                <h1 class="h1_mobil">{data.name}</h1>
-
-      <img src={data.front} alt="tee1_front" class="tee1_front" />
+      <h1 class="h1_mobil">{data.name}</h1>
+      <div class="img_container">
+        <img src={data.front} alt="tee1_front" class="tee1_front" />
+      </div>
       <div class="text">
         <div class="panic_dealer_tee">
           <h1 class="h1">{data.name}</h1>
         </div>
-        <h3 class="pris">{data.price} DKK</h3>
+        <h2 class="pris">{data.price} DKK</h2>
+        <p>Tax included. Shipping calculated at checkout.</p>
         <p class="beskrivelse">
           {data.discription}
         </p>
+        <p>{data.model}</p>
+        <h3 class="name_size" {...data.name === "TOTE BAG" && { id: "gem" }}>SIZE</h3>
         <div class="container">
-          <div class="size-selector">
-            <label>SIZE</label>
+          <div class="size-selector" {...data.name === "TOTE BAG" && { id: "gem" }}>
             <div class="sizes">
               <button class="size" data-size="S">S</button>
               <button class="size" data-size="M">M</button>
@@ -55,33 +58,56 @@ console.log(data);
               <button class="size" data-size="XL">XL</button>
             </div>
           </div>
-          <div class="quantity-selector">
-            <button id="decrease">-</button>
-            <span id="quantity">1</span>
-            <button id="increase">+</button>
+          <div class="add_to_card_and_quantity_selector">
+            <div class="quantity-selector">
+              <button id="decrease">-</button>
+              <span id="quantity">1</span>
+              <button id="increase">+</button>
+            </div>
+            <button id="add-to-cart">ADD TO CART</button>
           </div>
-          <button id="add-to-cart">ADD TO CART</button>
+        </div>
+        <div class="all_acordion">
+          <button class="accordion">MATERIALS</button>
+          <div class="panel">
+            <p>{data.materials}</p>
+          </div>
+
+          <button class="accordion" {...data.name === "TOTE BAG" && { id: "gem" }}>FIT</button>
+          <div class="panel" {...data.name === "TOTE BAG" && { id: "gem" }}>
+            <p>{data.fit1}</p>
+            <p>{data.fit2}</p>
+          </div>
+
+          <button class="accordion">CARE INSTRUCTIONS</button>
+          <div class="panel">
+            <p>{data.care1}</p>
+            <p>{data.care2}</p>
+            <p>{data.care3}</p>
+            <p>{data.care4}</p>
+            <p>{data.care5}</p>
+          </div>
         </div>
       </div>
     </div>
-    <img src="../../public/img/sizechart.webp" alt="sizechart" class="sizechart" />
-    <Get_inspired />
+    <img src={data.sizechart} alt="sizechart" class="sizechart" />
+    <Get_inspired data={data} />
   </main>
   <Footer />
 </Layout>
 
 <style>
-
   .h1_mobil {
     display: none;
   }
   main {
-    padding: 4rem;
+    padding: 3% 8% 8% 8%;
   }
   a {
     text-decoration: none;
     color: var(--oliveGrey);
   }
+
   img {
     width: 80%;
   }
@@ -89,21 +115,40 @@ console.log(data);
     font-size: 3rem;
     margin: 0%;
   }
+
   .grid1_1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 10%;
+    margin-top: 5%;
+  }
+
+  .product-page {
+    margin-left: 6%;
+    margin-right: 4%;
+  }
+
+  .text {
+    max-width: 100%;
   }
   .beskrivelse {
+    margin-top: 5%;
+  }
+
+  .beskrivelse + p {
+    margin-top: 5%;
+  }
+
+  #gem {
+    display: none;
+  }
+
+  h3 {
     margin-top: 5%;
   }
   .sizechart {
     margin-top: 10%;
     width: 102%;
-    border: 1px solid black; /* Ændr bredden efter behov */
-  }
-  .tee1_front {
-    margin-bottom: 20%;
+    border: 1px solid black;
   }
   .pris {
     margin-top: 10%;
@@ -111,8 +156,14 @@ console.log(data);
   .container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 10px;
+    width: 90%;
+    margin-top: 5%;
+  }
+
+  .add_to_card_and_quantity_selector {
+    display: flex;
+    gap: 5%;
   }
 
   .size-selector label {
@@ -121,18 +172,21 @@ console.log(data);
 
   .sizes {
     display: flex;
-    gap: 23px;
+    gap: 5%;
   }
 
   .size {
-    padding: 13px;
+    width: 100%;
+    height: 50px;
     border: 1px solid #000;
     background-color: #fff;
     cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 
   .size.selected {
-    background-color: #073F9C;
+    background-color: #073f9c;
     color: #fff;
   }
 
@@ -140,30 +194,112 @@ console.log(data);
     display: flex;
     align-items: center;
     gap: 10px;
-  }
-
-  .quantity-selector button {
-    padding: 13px;
     border: 1px solid #000;
     background-color: #fff;
     cursor: pointer;
+    font-size: 1.5rem;
+    font-family: var(--primary);
+    padding-left: 1%;
+    padding-right: 1.5%;
+  }
+
+  .quantity-selector button {
+    border: 0px;
+    font-size: 2rem;
+    height: 40px;
+    width: 30px;
   }
 
   #add-to-cart {
     padding: 13px 10px;
-    background-color: #073F9C;
+    background-color: #073f9c;
     color: #fff;
     border: none;
     cursor: pointer;
-   position: relative;
-   top: -55px;
-   left: 125px;
-    
-    
+    font-size: 1.5rem;
+    width: 100%;
   }
 
-  #add-to-cart:hover {
-    background-color: #073F9C;
+  .accordion {
+    background-color: white;
+    color: var(--notThatBlack);
+    cursor: pointer;
+    padding-top: 2%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2rem;
+    transition: 0.4s;
+    width: 90%;
+    font-weight: bold;
+    font-family: var(--secondary);
+  }
+
+  .all_acordion {
+    margin-top: 5%;
+  }
+
+  .accordion:after {
+    content: "\003C";
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    transform: rotate(270deg);
+    display: inline-block;
+  }
+
+  .active:after {
+    content: "\003C";
+    transform: rotate(90deg);
+    display: inline-block;
+  }
+
+  .panel {
+    background-color: var(--delicateWhite);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .panel p {
+    width: 90%;
+    padding-left: 0%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    .size {
+      font-size: 1rem;
+    }
+
+    #add-to-cart {
+      font-size: 1rem;
+    }
+
+    .quantity-selector {
+      font-size: 1rem;
+    }
+
+    .quantity-selector button {
+      font-size: 1.5rem;
+    }
+
+    .accordion {
+      font-size: 1rem;
+    }
   }
 
   @media (max-width: 800px) {
@@ -177,23 +313,21 @@ console.log(data);
     .product-page .grid1_1 {
       display: flex;
       flex-direction: column;
-      align-items: center;
     }
 
     .product-page .grid1_1 .panic_dealer_tee {
-      order: -1; /* Sørg for at denne er først */
+      order: -1;
     }
 
     .product-page .grid1_1 .tee1_front {
-      order: 1; /* Sørg for at billedet er nummer 2 */
-      margin-bottom: 2rem; /* Juster margin for bedre spacing */
+      order: 1;
+      margin-bottom: 2rem;
       width: 100%;
     }
 
     .product-page .grid1_1 .text {
-      order: 2; /* Sørg for at tekst div er nummer 3 */
+      order: 2;
       width: 100%;
-      text-align: center; /* Centrer tekst for bedre læsbarhed */
     }
 
     .sizechart {
@@ -207,12 +341,36 @@ console.log(data);
     .h1_mobil {
       display: block;
     }
-  }
 
+    .container {
+      width: 100%;
+    }
+
+    .accordion {
+      width: 100%;
+    }
+  }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    // Accordion functionality
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+
+    // Size selection functionality
     let selectedSize = null;
     const sizes = document.querySelectorAll(".size");
     sizes.forEach((size) => {
@@ -223,6 +381,7 @@ console.log(data);
       });
     });
 
+    // Quantity functionality
     let quantity = 1;
     const quantityElement = document.getElementById("quantity");
     document.getElementById("decrease").addEventListener("click", function () {
