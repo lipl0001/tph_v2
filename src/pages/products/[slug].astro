@@ -214,13 +214,5 @@ console.log(data);
       quantity++;
       quantityElement.textContent = quantity;
     });
-
-    document.getElementById("add-to-cart").addEventListener("click", function () {
-      if (selectedSize) {
-        alert(`Added to cart: Size ${selectedSize}, Quantity ${quantity}`);
-      } else {
-        alert("Please select a size.");
-      }
-    });
   });
 </script>
