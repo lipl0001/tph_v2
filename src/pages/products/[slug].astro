@@ -29,83 +29,96 @@ console.log(data);
 ---
 
 <Layout title="PanicHood">
-  <Header />
-  <main class="product-page">
-    <p><a href="">Home</a> / <a href="">Products</a> / <a href="">{data.name}</a></p>
-    <div class="grid1_1">
-      <img src={data.front} alt="tee1_front" class="tee1_front" />
-
-      <div class="text">
-        <h1 class="h1">{data.name}</h1>
-        <h3 class="pris">{data.price} DKK</h3>
-        <p class="beskrivelse">{data.discription}</p>
-      </div>
-    </div>
-    <img src="../../public/img/sizechart.webp" alt="sizechart" class="sizechart" />
-
-    <Collage />
-  </main>
-  <Footer />
+    <Header />
+    <main class="product-page">
+        <p><a href="">Home</a> / <a href="">Products</a> / <a href="">{data.name}</a></p>
+        <div class="grid1_1">
+            <img src={data.front} alt="tee1_front" class="tee1_front">
+            <div class="text">
+                <div class="panic_dealer_tee">
+                    <h1 class="h1">{data.name}</h1>
+                </div>
+                <h3 class="pris">{data.price} DKK</h3>
+                <p class="beskrivelse">
+                   {data.discription}
+                </p>
+            </div>
+        </div>
+        <img src="../../public/img/sizechart.webp" alt="sizechart" class="sizechart">
+        <Collage />
+    </main>
+    <Footer />
 </Layout>
 
 <style>
-  main {
+main {
     padding: 4rem;
-  }
-  a {
+}
+a {
     text-decoration: none;
     color: var(--oliveGrey);
-  }
-
-  img {
+}
+img {
     width: 80%;
-  }
-
-  h1 {
+}
+h1 {
     font-size: 3rem;
     margin: 0%;
-  }
-  .grid1_1 {
+}
+.grid1_1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 10%;
-  }
-
-  .beskrivelse {
+}
+.beskrivelse {
     margin-top: 5%;
-  }
-
-  .sizechart {
+}
+.sizechart {
     margin-top: 10%;
     width: 102%;
     border: 1px solid black; /* Ændr bredden efter behov */
-  }
-
-  .tee1_front {
+}
+.tee1_front {
     margin-bottom: 20%;
-  }
-
-  .pris {
+}
+.pris {
     margin-top: 10%;
-  }
+}
 
-  @media (max-width: 800px) {
+
+@media (max-width: 800px) {
+    main {
+        padding: 2rem; /* Mindre padding for mindre skærme */
+    }
+    img {
+        width: 100%; /* Fyld hele bredden på mindre skærme */
+    }
+    
     .product-page .grid1_1 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .product-page .grid1_1 .h1 {
-      order: 1;
+    .product-page .grid1_1 .panic_dealer_tee {
+        order: -1; /* Sørg for at denne er først */
     }
 
     .product-page .grid1_1 .tee1_front {
-      order: 2;
+        order: 1; /* Sørg for at billedet er nummer 2 */
+        margin-bottom: 2rem; /* Juster margin for bedre spacing */
+        width: 100%;
     }
 
     .product-page .grid1_1 .text {
-      order: 3;
+        order: 2; /* Sørg for at tekst div er nummer 3 */
+        width: 100%;
+        text-align: center; /* Centrer tekst for bedre læsbarhed */
     }
-  }
+
+    .sizechart {
+        width: 100%;
+    }
+}
 </style>
+
