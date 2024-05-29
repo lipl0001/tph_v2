@@ -3,8 +3,8 @@ const { data } = Astro.props;
 console.log(data);
 ---
 
-<a href={`products/${data.slug}`}>
-  <article>
+<article>
+  <a href={`products/${data.slug}`}>
     <div class="img_container">
       <img src={data.front} alt="" class="default-img" />
       <img src={data.back} alt="" class="hover-img" />
@@ -24,28 +24,31 @@ console.log(data);
         )
       }
     </div>
-    <div class="info">
-      <p class="navn">{data.name}</p>
+  </a>
+  <div class="info">
+    <p class="navn">{data.name}</p>
 
-      <!--Med hjælp fra chat GPT-->
-      <div class="pris">
-        <p class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price + " DKK"}</p>
-        {data.sale && <p>{data.discountprice} DKK</p>}
-      </div>
+    <!--Med hjælp fra chat GPT-->
+    <div class="pris">
+      <p class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price + " DKK"}</p>
+      {data.sale && <p>{data.discountprice} DKK</p>}
     </div>
-  </article>
-</a>
+  </div>
+</article>
 
 <style>
   a {
     text-decoration: none;
     color: var(--notThatBlack);
+    width: 70;
   }
 
   article {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 67%;
+    justify-self: center;
   }
   img {
     width: 100%;
@@ -88,7 +91,6 @@ console.log(data);
   .img_container > *:not(.box):not(.box2) {
     width: 100%;
     height: 100%;
-    align-self: center;
   }
 
   .img_container .box,
@@ -128,5 +130,21 @@ console.log(data);
 
   .udsolgt {
     background-color: transparent;
+  }
+
+  @media (max-width: 1100px) {
+    .img_container {
+      position: relative;
+      width: 250px;
+      height: 350px;
+    }
+
+    .img_container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 </style>
