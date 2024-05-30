@@ -39,13 +39,33 @@ console.log(data);
         <img src={data.front} alt="tee1_front" class="tee1_front active" />
         <img src={data.bigfront} alt="tee1_front" class="tee2_front" />
         <img src={data.back} alt="tee1_front" class="tee3_front" />
+
+        <div>
+          {
+            data.soldout && (
+              <>
+                <div class="box">Sold out</div>
+              </>
+            )
+          }
+          {
+            data.sale && (
+              <>
+                <div class="box2">On sale</div>
+              </>
+            )
+          }
+        </div>
       </div>
       <button id="next-btn" class="next-btn"> <img src="../../ikoner/pil.png" alt="" /> </button>
       <div class="text">
         <div class="panic_dealer_tee">
           <h1 class="h1">{data.name}</h1>
         </div>
-        <h2 class="pris">{data.price} DKK</h2>
+        <div class="pris">
+          <h2 class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price}</h2>
+          {data.sale && <h2 class="discountedprice">{data.discountprice} DKK</h2>}
+        </div>
         <p>Tax included. Shipping calculated at checkout.</p>
         <p class="beskrivelse">
           {data.discription}
@@ -67,274 +87,64 @@ console.log(data);
               <span id="quantity">1</span>
               <button id="increase">+</button>
             </div>
-            <button id="add-to-cart">ADD TO CART</button>
-          </div>
-        </div>
-        <div class="all_acordion">
-          <button class="accordion">MATERIALS</button>
-          <div class="panel">
-            <p>{data.materials}</p>
-          </div>
 
-          <button class="accordion" {...data.name === "TOTE BAG" && { id: "gem" }}>FIT</button>
-          <div class="panel" {...data.name === "TOTE BAG" && { id: "gem" }}>
-            <p>{data.fit1}</p>
-            <p>{data.fit2}</p>
+            {data.soldout ? <button id="soldout">SOLD OUT</button> : <button id="add-to-cart">ADD TO CART</button>}
           </div>
+          <div class="all_acordion">
+            <button class="accordion">MATERIALS</button>
+            <div class="panel">
+              <p>{data.materials}</p>
+            </div>
 
-          <button class="accordion">CARE INSTRUCTIONS</button>
-          <div class="panel">
-            <p>{data.care1}</p>
-            <p>{data.care2}</p>
-            <p>{data.care3}</p>
-            <p>{data.care4}</p>
-            <p>{data.care5}</p>
+            <button class="accordion" {...data.name === "TOTE BAG" && { id: "gem" }}>FIT</button>
+            <div class="panel" {...data.name === "TOTE BAG" && { id: "gem" }}>
+              <p>{data.fit1}</p>
+              <p>{data.fit2}</p>
+            </div>
+
+            <button class="accordion">CARE INSTRUCTIONS</button>
+            <div class="panel">
+              <p>{data.care1}</p>
+              <p>{data.care2}</p>
+              <p>{data.care3}</p>
+              <p>{data.care4}</p>
+              <p>{data.care5}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <img src={data.sizechart} alt="sizechart" class="sizechart" />
     <Get_inspired data={data} />
+
+    <Footer />
   </main>
-  <Footer />
-</Layout>
 
-<style>
-  .h1_mobil {
-    display: none;
-  }
-  main {
-    padding: 3% 8% 8% 8%;
-  }
-  a {
-    text-decoration: none;
-    color: var(--oliveGrey);
-  }
-
-  img {
-    width: 80%;
-    background-color: transparent;
-  }
-  .img_container {
-    position: relative;
-  }
-
-  .img_container img {
-    display: none;
-  }
-  .img_container img.active {
-    display: block;
-  }
-
-  .next-btn {
-    cursor: pointer;
-    position: absolute;
-    z-index: 1;
-    border: 0px;
-    justify-content: center;
-    background-color: transparent;
-    margin-top: 18%;
-    width: 5%;
-    left: 41%;
-  }
-
-  h1 {
-    font-size: 3rem;
-    margin: 0%;
-  }
-
-  .grid1_1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 5%;
-  }
-
-  .product-page {
-    margin-left: 6%;
-    margin-right: 4%;
-  }
-
-  .text {
-    max-width: 100%;
-  }
-  .beskrivelse {
-    margin-top: 5%;
-  }
-
-  .beskrivelse + p {
-    margin-top: 5%;
-  }
-
-  #gem {
-    display: none;
-  }
-
-  h3 {
-    margin-top: 5%;
-  }
-  .sizechart {
-    margin-top: 10%;
-    width: 102%;
-    border: 1px solid black;
-  }
-  .pris {
-    margin-top: 10%;
-  }
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 90%;
-    margin-top: 5%;
-  }
-
-  .add_to_card_and_quantity_selector {
-    display: flex;
-    gap: 5%;
-  }
-
-  .size-selector label {
-    font-weight: bold;
-  }
-
-  .sizes {
-    display: flex;
-    gap: 5%;
-  }
-
-  .size {
-    width: 100%;
-    height: 50px;
-    border: 1px solid #000;
-    background-color: #fff;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  .size.selected {
-    background-color: #073f9c;
-    color: #fff;
-  }
-
-  .quantity-selector {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #000;
-    background-color: #fff;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-family: var(--primary);
-    padding-left: 1%;
-    padding-right: 1.5%;
-  }
-
-  .quantity-selector button {
-    border: 0px;
-    font-size: 2rem;
-    height: 40px;
-    width: 30px;
-  }
-
-  #add-to-cart {
-    padding: 13px 10px;
-    background-color: #073f9c;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    width: 100%;
-  }
-
-  .accordion {
-    background-color: white;
-    color: var(--notThatBlack);
-    cursor: pointer;
-    padding-top: 2%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 1.2rem;
-    transition: 0.4s;
-    width: 90%;
-    font-weight: bold;
-    font-family: var(--secondary);
-  }
-
-  .all_acordion {
-    margin-top: 5%;
-  }
-
-  .accordion:after {
-    content: "\003C";
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-    transform: rotate(270deg);
-    display: inline-block;
-  }
-
-  .active:after {
-    content: "\003C";
-    transform: rotate(90deg);
-    display: inline-block;
-  }
-
-  .panel {
-    background-color: var(--delicateWhite);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-  }
-
-  .panel p {
-    width: 90%;
-    padding-left: 0%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-  }
-
-  @media (max-width: 1000px) {
-    h1 {
-      font-size: 2.4rem;
+  <style>
+    .h1_mobil {
+      display: none;
     }
-
-    h2 {
-      font-size: 1.5rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-    }
-
-    .size {
-      font-size: 1rem;
-    }
-
-    #add-to-cart {
-      font-size: 1rem;
-    }
-
-    .quantity-selector {
-      font-size: 1rem;
-    }
-
-    .quantity-selector button {
-      font-size: 1.5rem;
-    }
-
-    .accordion {
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 800px) {
     main {
-      padding: 2rem; /* Mindre padding for mindre skærme */
+      padding: 3% 8% 8% 8%;
     }
+    a {
+      text-decoration: none;
+      color: var(--oliveGrey);
+    }
+
     img {
-      width: 100%; /* Fyld hele bredden på mindre skærme */
+      width: 80%;
+      background-color: transparent;
+    }
+    .img_container {
+      position: relative;
+    }
+
+    .img_container img {
+      display: none;
+    }
+    .img_container img.active {
+      display: block;
     }
 
     .next-btn {
@@ -344,105 +154,374 @@ console.log(data);
       border: 0px;
       justify-content: center;
       background-color: transparent;
-      margin-top: 60%;
-      width: 10%;
-      left: 85%;
+      margin-top: 18%;
+      width: 5%;
+      left: 41%;
     }
 
-    .product-page .grid1_1 {
+    .img_container .box,
+    .img_container .box2 {
+      position: absolute;
+      top: 0%;
+      right: 20%;
+      background-color: var(--notThatBlack);
+      color: var(--delicateWhite);
+      padding: 10px;
+      font-family: var(--primary);
+    }
+
+    .img_container .box2 {
+      background-color: var(--accentColor);
+      padding-left: 9%;
+      padding-right: 9%;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0%;
+    }
+
+    .pris {
+      padding-top: 1%;
       display: flex;
-      flex-direction: column;
     }
 
-    .product-page .grid1_1 .panic_dealer_tee {
-      order: -1;
+    .discountedprice {
+      color: var(--accentColor);
     }
 
-    .product-page .grid1_1 .img_container {
-      order: 1;
-      margin-bottom: 2rem;
-      width: 100%;
+    .sale {
+      display: inline-block; /* eller block afhængigt af dine behov */
+      width: 65px;
+      height: 38px;
+      background-image: url(../../illustrationer/tekst_krussedulle.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
     }
 
-    .product-page .grid1_1 .text {
-      order: 2;
-      width: 100%;
+    .grid1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 5%;
     }
 
-    .sizechart {
-      width: 100%;
+    .product-page {
+      margin-left: 6%;
+      margin-right: 4%;
     }
 
-    .h1 {
+    .text {
+      max-width: 100%;
+    }
+    .beskrivelse {
+      margin-top: 5%;
+    }
+
+    .beskrivelse + p {
+      margin-top: 5%;
+    }
+
+    #gem {
       display: none;
     }
 
-    .h1_mobil {
-      display: block;
+    h3 {
+      margin-top: 5%;
+    }
+    .sizechart {
+      margin-top: 10%;
+      width: 102%;
+      border: 1px solid black;
+    }
+    .pris {
+      margin-top: 10%;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 90%;
+      margin-top: 5%;
     }
 
-    .container {
+    .add_to_card_and_quantity_selector {
+      display: flex;
+      gap: 5%;
+    }
+
+    .size-selector label {
+      font-weight: bold;
+    }
+
+    .sizes {
+      display: flex;
+      gap: 5%;
+    }
+
+    .size {
+      width: 100%;
+      height: 50px;
+      border: 1px solid #000;
+      background-color: #fff;
+      cursor: pointer;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .size.selected {
+      background-color: #073f9c;
+      color: #fff;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #000;
+      background-color: #fff;
+      cursor: pointer;
+      font-size: 1.5rem;
+      font-family: var(--primary);
+      padding-left: 1%;
+      padding-right: 1.5%;
+    }
+
+    .quantity-selector button {
+      border: 0px;
+      font-size: 2rem;
+      height: 40px;
+      width: 30px;
+    }
+
+    #add-to-cart {
+      padding: 13px 10px;
+      background-color: var(--accentColor);
+      color: var(--delicateWhite);
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      width: 100%;
+    }
+
+    #soldout {
+      padding: 13px 10px;
+      background-color: var(--notThatBlack);
+      color: var(--delicateWhite);
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
       width: 100%;
     }
 
     .accordion {
-      width: 100%;
+      background-color: var(--delicateWhite);
+      color: var(--notThatBlack);
+      cursor: pointer;
+      padding-top: 2%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.2rem;
+      transition: 0.4s;
+      width: 90%;
+      font-weight: bold;
+      font-family: var(--secondary);
     }
-  }
-</style>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Accordion functionality
-    var acc = document.getElementsByClassName("accordion");
-    var i;
+    .all_acordion {
+      margin-top: 5%;
+    }
 
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
+    .accordion:after {
+      content: "\003C";
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+      transform: rotate(270deg);
+      display: inline-block;
+    }
+
+    .active:after {
+      content: "\003C";
+      transform: rotate(90deg);
+      display: inline-block;
+    }
+
+    .panel {
+      background-color: var(--delicateWhite);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+
+    .panel p {
+      width: 90%;
+      padding-left: 0%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+    }
+
+    @media (max-width: 1000px) {
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      .size {
+        font-size: 1rem;
+      }
+
+      #add-to-cart {
+        font-size: 1rem;
+      }
+
+      .quantity-selector {
+        font-size: 1rem;
+      }
+
+      .quantity-selector button {
+        font-size: 1.5rem;
+      }
+
+      .accordion {
+        font-size: 1rem;
+      }
+
+      .sale {
+        width: 50px;
+        height: 30px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      main {
+        padding: 2rem; /* Mindre padding for mindre skærme */
+      }
+      img {
+        width: 100%; /* Fyld hele bredden på mindre skærme */
+      }
+
+      .next-btn {
+        cursor: pointer;
+        position: absolute;
+        z-index: 1;
+        border: 0px;
+        justify-content: center;
+        background-color: transparent;
+        margin-top: 60%;
+        width: 10%;
+        left: 85%;
+      }
+
+      .product-page .grid1_1 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-page .grid1_1 .panic_dealer_tee {
+        order: -1;
+      }
+
+      .product-page .grid1_1 .img_container {
+        order: 1;
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+
+      .product-page .grid1_1 .text {
+        order: 2;
+        width: 100%;
+      }
+
+      .sizechart {
+        width: 100%;
+      }
+
+      .h1 {
+        display: none;
+      }
+
+      .h1_mobil {
+        display: block;
+      }
+
+      .container {
+        width: 100%;
+      }
+
+      .accordion {
+        width: 100%;
+      }
+
+      .img_container .box,
+      .img_container .box2 {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Accordion functionality
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+
+      // Size selection functionality
+      let selectedSize = null;
+      const sizes = document.querySelectorAll(".size");
+      sizes.forEach((size) => {
+        size.addEventListener("click", function () {
+          sizes.forEach((s) => s.classList.remove("selected"));
+          size.classList.add("selected");
+          selectedSize = size.getAttribute("data-size");
+        });
+      });
+
+      // Quantity functionality
+      let quantity = 1;
+      const quantityElement = document.getElementById("quantity");
+      document.getElementById("decrease").addEventListener("click", function () {
+        if (quantity > 1) {
+          quantity--;
+          quantityElement.textContent = quantity;
         }
       });
-    }
+      document.getElementById("increase").addEventListener("click", function () {
+        quantity++;
+        quantityElement.textContent = quantity;
+      });
 
-    // Size selection functionality
-    let selectedSize = null;
-    const sizes = document.querySelectorAll(".size");
-    sizes.forEach((size) => {
-      size.addEventListener("click", function () {
-        sizes.forEach((s) => s.classList.remove("selected"));
-        size.classList.add("selected");
-        selectedSize = size.getAttribute("data-size");
+      // Image slider functionality
+      const images = document.querySelectorAll(".img_container img");
+      const nextBtn = document.getElementById("next-btn");
+      let currentIndex = 0;
+
+      nextBtn.addEventListener("click", function () {
+        images[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add("active");
       });
     });
-
-    // Quantity functionality
-    let quantity = 1;
-    const quantityElement = document.getElementById("quantity");
-    document.getElementById("decrease").addEventListener("click", function () {
-      if (quantity > 1) {
-        quantity--;
-        quantityElement.textContent = quantity;
-      }
-    });
-    document.getElementById("increase").addEventListener("click", function () {
-      quantity++;
-      quantityElement.textContent = quantity;
-    });
-
-    // Image slider functionality
-    const images = document.querySelectorAll(".img_container img");
-    const nextBtn = document.getElementById("next-btn");
-    let currentIndex = 0;
-
-    nextBtn.addEventListener("click", function () {
-      images[currentIndex].classList.remove("active");
-      currentIndex = (currentIndex + 1) % images.length;
-      images[currentIndex].classList.add("active");
-    });
-  });
-</script>
+  </script>
+</Layout>
