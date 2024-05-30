@@ -8,7 +8,7 @@ const { data } = Astro.props;
   <div class="grid_1">
     <div class="billede1">
       <div>
-        <a href={`/${data.inspiredslug1}`}
+        <a href={`/products/${data.inspiredslug1}`}
           >"
           <img src={data.get_inspired1} alt="get_inspired1" />
         </a>
@@ -18,11 +18,11 @@ const { data } = Astro.props;
     </div>
     <div class="billede2">
       <div>
-        <a href={`${data.inspiredslug2}`}>
+        <a href={`/products/${data.inspiredslug2}`}>
           <img src={data.get_inspired2} alt="get_inspired2" />
         </a>
       </div>
-      <p class="name">{data.inspired_title2}</p>
+      <p class="name">{data.inspired_title2} DKK</p>
       <p class="price">{data.inspireprice2} DKK</p>
     </div>
   </div>
