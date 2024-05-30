@@ -89,9 +89,9 @@
     }
     .form {
       display: flex;
-      justify-content: center; /* Centrerer indholdet horisontalt */
-      align-items: center; /* Centrerer indholdet vertikalt */
-      gap: 4px; /* Afstand mellem input-feltet og knappen */
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
     }
 
     /* Styling af input-feltet */
@@ -116,6 +116,7 @@
     .terms {
       margin-top: 1rem;
       margin-bottom: 5rem;
+      text-align: center;
     }
   }
   /* DESKTOP */
@@ -135,6 +136,10 @@
       order: 1;
       width: 100%;
     }
+    input::placeholder {
+      color: var(--accentColor);
+    }
+
     .join {
       font-family: var(--primary);
       font-weight: 800;
@@ -155,8 +160,8 @@
     .form input[type="text"] {
       padding: 2.5%;
       border: 2px solid #073f9c;
-      font-size: 16px;
-      width: 60%;
+      font-size: 1.2cqw;
+      width: 70%;
     }
     .sign-up-btn {
       background-color: #fefefe;
@@ -164,7 +169,7 @@
       padding: 2.5% 1%; /* Indre afstand */
       text-align: center; /* Centrer tekst */
       text-decoration: none; /* Fjern understregning */
-      font-size: 16px; /* Skriftstørrelse */
+      font-size: 1.2cqw; /* Skriftstørrelse */
       border: 2px solid #073f9c; /* Blå kant */
       cursor: pointer; /* Pege-hånd ikon ved hover */
       transition: background-color 0.3s ease; /* Glidende overgang ved hover */

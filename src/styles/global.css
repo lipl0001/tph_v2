@@ -68,6 +68,12 @@ main {
     font-weight: 700;
   }
 
+   h3 {
+     font-family: var(--primary);
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
   h5 {
     font-family: var(--primary);
     font-weight: 400;

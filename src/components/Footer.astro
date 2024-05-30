@@ -2,92 +2,129 @@
 
 ---
 
-<div class="grid">
-  <div class="grid_footer1">
-    <p class="bold_p">INFO</p>
-    <p>HOMEPAGE</p>
-    <p>PRODUCTS</p>
-    <p>SHIPPING & RETURNS</p>
-    <p>PRIVACY POLICY</p>
-    <p>TERMS OF SERVICE</p>
-  </div>
-
-  <div class="grid_footer2">
-    <p class="bold_p">LET'S CONNECT!</p>
-
-    
-    <div class="ikoner">
-      <img src="../../ikoner/instagram.png" alt="instagram" />
-      <p>Instagram</p>
+<div class="footer">
+  <div class="grid">
+    <div class="grid_footer1">
+      <h3>INFO</h3>
+      <p>HOMEPAGE</p>
+      <p>PRODUCTS</p>
+      <p>SHIPPING & RETURNS</p>
+      <p>PRIVACY POLICY</p>
+      <p>TERMS OF SERVICE</p>
     </div>
-    <div class="ikoner tiktok">
-      <img src="../../ikoner/tiktok.png" alt="tiktok" />
-      <p>TikTok</p>
+
+    <div class="grid_footer2">
+      <h3>LET'S CONNECT!</h3>
+
+      <div class="ikoner">
+        <img src="../../ikoner/instagram_logo.svg" alt="instagram" />
+        <p>INSTAGRAM</p>
+      </div>
+      <div class="ikoner">
+        <img src="../../ikoner/tiktok_logo.svg" alt="tiktok" />
+        <p>TTIKTOK</p>
+      </div>
+    </div>
+
+    <div class="grid_footer3">
+      <div class="jointhehood">
+        <h3>JOIN THE HOOD</h3>
+        <p>SIGN UP FOR OUR NEWSLETTER AND GET 10% OFF YOUR FIRST ORDER</p>
+      </div>
+
+      <!--hjælp fra chatgbt-->
+      <form class="form">
+        <!-- Input-felt med pladsholder tekst -->
+        <input type="text" id="email" name="email" placeholder="DROP YOUR E-MAIL HERE..." />
+        <!-- Knap -->
+        <button type="submit" class="sign-up-btn">SIGN UP</button>
+      </form>
+      <!--hjælp fra chatgbt-->
+      <p class="disclaimer">By signing up, you consent to The Panichood sending you newsletters. We never share your information with third parties. You can unsubscribe at any time via the link in our emails.</p>
     </div>
   </div>
-  
 
-  <div class="grid_footer3">
-    <p class="bold_p">JOIN THE HOOD</p>
-    <p>SIGN UP FOR OUR NEWSLETTER AND GET 10% OFF YOUR FIRST ORDER</p>
+  <div class="iconer">
+    <div class="free_delivery">
+      <img src="/ikoner/free_delivery_icon.svg" alt="free_delivery" />
+      <h4>Free Delivery</h4>
+      <p>Free delivery on orders over 799 DKK</p>
+    </div>
+    <div>
+      <img src="/ikoner/customer_service_icon.svg" alt="free_delivery" />
+      <h4>Costumer service</h4>
+      <p>Contact us if you need any help</p>
+    </div>
 
-    <!--hjælp fra chatgbt-->
-    <form id="emailForm">
-      <label for="email">Drop your e-mail here:</label>
-      <input type="email" id="email" name="email" required />
-      <button type="submit">SIGN UP</button>
-    </form>
-    <!--hjælp fra chatgbt-->
-    <p>By signing up, you consent to The Panichood sending you newsletters. We never share your information with third parties. You can unsubscribe at any time via the link in our emails.</p>
+    <div>
+      <img src="/ikoner/free_return_icon.svg" alt="free_delivery" />
+      <h4>Free return</h4>
+      <p>30 day free return - prepaid return label</p>
+    </div>
+    <div class="stars">
+      <img src="/ikoner/happy_costumers_icon.svg" alt="free_delivery" />
+      <div>
+        <h4>Happy costumers</h4>
+        <p>Our customers are happy with the products</p>
+      </div>
+    </div>
   </div>
 </div>
-
-<div class="iconer">
-<div class="free_delivery">
-<img src="/public/ikoner/free_delivery_icon.svg" alt="free_delivery">
-<h4>Free Delivery</h4>
-<p>Free delivery on orders over 799 DKK</p>
-</div>
-<div>
-  <img src="/public/ikoner/customer_service_icon.svg" alt="free_delivery">
-<h4>Costumer service</h4>
-<p>Contact us if you need any help</p>
-</div>
-
-<div>
-  <img src="/public/ikoner/free_return_icon.svg" alt="free_delivery">
-<h4>Free return</h4>
-<p>30 day free return - prepaid return label</p>
-</div>
-<div>
-  <img src="/public/ikoner/happy_costumers_icon.svg" alt="free_delivery">
-<h4>Happy costumers</h4>
-<p>Our customers are happy with the products</p>
-</div>
-
-
-</div>
-
 <style>
   * {
     box-sizing: border-box;
-    margin: 0 auto;
-    background-color: #525148;
-    color: #fefefe;
-    padding: 3%;
+    background-color: var(--oliveGrey);
+    color: var(--delicateWhite);
+  }
+
+  .footer {
+    background-color: var(--oliveGrey);
   }
   img {
     width: 30%;
     height: auto;
     display: block;
+    background-color: transparent;
   }
 
-  .button{
+  .button {
     border: none;
   }
   .bold_p {
     font-weight: bolder;
-    
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 2.1fr 1fr 1fr;
+    padding-left: 3%;
+    padding-top: 3%;
+  }
+
+  .grid_footer3 {
+    max-width: 100%;
+  }
+
+  .grid_footer2 img {
+    width: 50px;
+  }
+
+  .grid_footer1 {
+    order: 2;
+    line-height: 50px;
+  }
+
+  .grid_footer2 {
+    order: 3;
+    line-height: 65px;
+  }
+
+  .jointhehood {
+    max-width: 75%;
+  }
+
+  .disclaimer {
+    max-width: 75%;
   }
 
   .ikoner {
@@ -96,37 +133,114 @@
     margin: 0%;
     max-width: 50%;
     align-items: center;
-    
+    gap: 20px;
   }
 
-  .grid_footer2 {
-   margin-left: 10%;
-  }
-  
-  .tiktok {
-    margin-top: 1rem;
+  .jointhehood h3 {
+    padding-top: 2.5%;
   }
 
-  @media (min-width: 800px) {
+  .jointhehood p {
+    padding-top: 2.5%;
+  }
+
+  .grid_footer3 {
+    order: 1;
+  }
+
+  form {
+    padding-top: 2.5%;
+  }
+
+  .disclaimer {
+    padding-top: 2.5%;
+  }
+
+  form input[type="text"] {
+    padding: 2.5%;
+    border: 1px solid var(--delicateWhite);
+    font-size: 1rem;
+    width: 60%;
+  }
+
+  .sign-up-btn {
+    color: var(--delicateWhite); /* Blå tekstfarve */
+    padding: 2.5% 1%; /* Indre afstand */
+    text-align: center; /* Centrer tekst */
+    text-decoration: none; /* Fjern understregning */
+    font-size: 1rem; /* Skriftstørrelse */
+    border: 1px solid var(--delicateWhite); /* Blå kant */
+    cursor: pointer; /* Pege-hånd ikon ved hover */
+    transition: background-color 0.3s ease; /* Glidende overgang ved hover */
+    flex: 0 0 auto; /* Knappen bevarer sin størrelse */
+  }
+
+  input::placeholder {
+    color: var(--delicateWhite);
+  }
+
+  .iconer {
+    display: flex;
+    text-align: center;
+    margin-top: 3%;
+    padding-bottom: 3%;
+  }
+  .iconer {
+    font-size: 0.8rem;
+  }
+  .iconer p {
+    width: 99%;
+    font-size: 0.7rem;
+  }
+
+  .iconer > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stars {
+    padding-top: 1%;
+    gap: 10px;
+  }
+
+  @media (max-width: 800px) {
     .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .grid_footer2 img {
-      width: 50px;
-    }
-
-    .grid_footer1 {
-      order: 2;
+      display: block;
     }
 
     .grid_footer2 {
-      order: 3;
+      margin-top: 5%;
     }
 
     .grid_footer3 {
-      order: 1;
+      margin-top: 5%;
+      width: 100%;
+      font-size: 0.5rem;
+    }
+
+    .jointhehood {
+      max-width: 90%;
+    }
+
+    .jointhehood p {
+      font-size: 1.2rem;
+    }
+
+    .iconer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 10%;
+      padding-bottom: 5%;
+    }
+
+    .iconer img {
+      max-width: 20%;
+    }
+
+    .stars {
+      padding-top: 3%;
     }
   }
 </style>
