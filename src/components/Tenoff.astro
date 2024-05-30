@@ -64,12 +64,23 @@
   window.addEventListener("load", sidenVises);
 
   function sidenVises() {
-    document.querySelector("#tenoff").classList.remove("gem");
+    const tenOffElement = document.querySelector("#tenoff");
+    const xElement = document.querySelector(".x");
+
+    if (tenOffElement) {
+      tenOffElement.classList.remove("gem");
+    }
+
+    if (xElement) {
+      xElement.addEventListener("click", gem);
+    }
   }
 
-  document.querySelector(".x").addEventListener("click", startspillet);
+  function gem() {
+    const tenOffElement = document.querySelector("#tenoff");
 
-  function startspillet() {
-    document.querySelector("#tenoff").classList.add("gem");
+    if (tenOffElement) {
+      tenOffElement.classList.add("gem");
+    }
   }
 </script>
