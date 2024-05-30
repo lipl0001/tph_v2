@@ -1,6 +1,12 @@
 ---
 import Card_products from "../components/Card_products.astro";
 
+interface ProductItem {
+  id: number;
+  name: string;
+  price: number;
+}
+
 const data = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items?soldout=is.null&sale=is.null", {
   method: "GET",
   headers: {
@@ -24,13 +30,9 @@ console.log(data);
     <div class="container">
       <div class="carousel-view">
         <div id="item-list" class="item-list">
-          {
-            data.map((product) => {
-              return <Card_products data={product} />;
-            })
-          }
+          {data.map((product: ProductItem) => <Card_products data={product} />)}
         </div>
-        <button id="next-btn" class="next-btn"> <img src="../../ikoner/pil.png" alt="" /> </button>
+        <button id="next-btn" class="next-btn"> <img src="../../ikoner/pil.png" alt="pil" /> </button>
       </div>
     </div>
   </div>
@@ -174,7 +176,9 @@ console.log(data);
   const itemWidth = 150;
   const padding = 10;
 
-  next.addEventListener("click", () => {
-    list.scrollLeft += itemWidth + padding;
-  });
+  if (next && list) {
+    next.addEventListener("click", () => {
+      list.scrollLeft += itemWidth + padding;
+    });
+  }
 </script>
