@@ -2,20 +2,31 @@
 const { data } = Astro.props;
 ---
 
-<div class="grid_1">
+<section class="section">
   <h1 class="get_inspired">GET INSPIRED</h1>
   <p class="tekst">Find more inspiration at our Instagram <a href="https://www.instagram.com/thepanichood" target="_blank">@thepanichood</a></p>
-  <div class="billede1">
-    <img src={data.get_inspired1} />
-    <p class="name">{data.inspired_title1}</p>
-    <p class="price">{data.inspireprice1}</p>
+  <div class="grid_1">
+    <div class="billede1">
+      <div>
+        <a href={`${data.inspiredslug1}`}
+          >"
+          <img src={data.get_inspired1} />
+        </a>
+      </div>
+      <p class="name">{data.inspired_title1}</p>
+      <p class="price">{data.inspireprice1}</p>
+    </div>
+    <div class="billede2">
+      <div>
+        <a href={`${data.inspiredslug2}`}>
+          <img src={data.get_inspired2} />
+        </a>
+      </div>
+      <p class="name">{data.inspired_title2}</p>
+      <p class="price">{data.inspireprice2} DKK</p>
+    </div>
   </div>
-  <div class="billede2">
-    <img src={data.get_inspired2} />
-    <p class="name">{data.inspired_title2}</p>
-    <p class="price">{data.inspireprice2} DKK</p>
-  </div>
-</div>
+</section>
 
 <style>
   .name {
@@ -35,48 +46,49 @@ const { data } = Astro.props;
     text-decoration: underline; /* Understreger linket når musen er over det */
   }
   /* MOBIL */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     .grid_1 {
       display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
-      margin: 50px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 50px;
+      gap: 0%;
     }
     .grid_1 img {
       width: 100%; /* Gør billederne responsive */
       height: auto; /* Bevarer billedets proportioner */
       display: block; /* Fjerner mellemrum under billederne */
     }
-  }
 
-  /* POSITION AF BILLEDER */
-  .billede1 {
-    width: 60%;
-    position: relative;
-    left: 40%;
-    top: 1%;
-    background-color: transparent;
-  }
+    .billede1 {
+      width: 90%;
+      position: relative;
+      top: 15%;
+      background-color: transparent;
+    }
 
-  .billede2 {
-    width: 60%;
-    position: relative;
-    left: -5%;
-    top: 2%;
-    background-color: transparent;
+    .billede2 {
+      width: 90%;
+      position: relative;
+      background-color: transparent;
+    }
+
+    .section {
+      margin-top: 50px;
+      padding-bottom: 20%;
+    }
   }
 
   /* DESKTOP */
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 800px) {
     .grid_1 {
       display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
-      margin: 50px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 50px;
+      gap: 2%;
     }
     .grid_1 img {
-      width: 75%; /* Gør billederne responsive */
-      height: auto; /* Bevarer billedets proportioner */
+      width: 100%;
+      height: auto;
       display: block; /* Fjerner mellemrum under billederne */
     }
     .get_inspired {
@@ -84,28 +96,30 @@ const { data } = Astro.props;
       font-weight: 800;
       font-size: 3rem;
     }
+
+    .section {
+      margin-top: 50px;
+      padding-bottom: 20%;
+    }
+
     .get_inspired,
     .tekst {
       position: relative;
-      left: 15%;
       top: 80%;
       background-color: transparent;
     }
 
     /* POSITION AF BILLEDER */
     .billede1 {
-      width: 30%;
+      width: 90%;
       position: relative;
-      left: 60%;
-      top: 10%;
+      top: 15%;
       background-color: transparent;
     }
 
     .billede2 {
-      width: 30%;
+      width: 90%;
       position: relative;
-      left: 35%;
-      top: -50%;
       background-color: transparent;
     }
   }

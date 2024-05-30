@@ -6,6 +6,7 @@ import Header from "../../components/Header.astro";
 import Collage from "../../components/Collage.astro";
 import Footer from "../../components/Footer.astro";
 import Get_inspired from "../../components/Get_inspired.astro";
+import Tenoff from "../../components/Tenoff.astro";
 
 export async function getStaticPaths() {
   const response = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items", {
@@ -31,8 +32,9 @@ console.log(data);
 
 <Layout title="PanicHood">
   <Header />
+  <Tenoff />
   <main class="product-page">
-    <p><a href="">Home</a> / <a href="">Products</a> / <a href="">{data.brodkrumme}</a></p>
+    <p><a href="/">Home</a> / <a href="/produkt_liste">Products</a> / <a href="">{data.brodkrumme}</a></p>
     <div class="grid1_1">
       <h1 class="h1_mobil">{data.name}</h1>
       <div class="img_container">
@@ -116,16 +118,16 @@ console.log(data);
     </div>
     <img src={data.sizechart} alt="sizechart" class="sizechart" />
     <Get_inspired data={data} />
-
-    <Footer />
   </main>
+
+  <Footer />
 
   <style>
     .h1_mobil {
       display: none;
     }
     main {
-      padding: 3% 8% 8% 8%;
+      padding: 3% 8% 0% 8%;
     }
     a {
       text-decoration: none;
