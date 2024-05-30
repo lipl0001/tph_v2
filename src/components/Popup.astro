@@ -1,28 +1,247 @@
 ---
-
-
+import "../styles/global.css";
 ---
 
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <div class="farve">
+      <span class="close-btn" id="close-btn">X</span>
+      <div class="text-section">
+        <div class="join_the_hood">
+          <h1>JOIN THE HOOD</h1>
+          <h2>&</h2>
+        </div>
+        <div class="save_10_and_order">
+          <p class="save_10">SAVE 10%</p>
+          <p class="order">... on your first order</p>
+        </div>
+      </div>
 
-
-<div class="grid1_1">
-<div class="join_the_hood">
-    <h1>JOIN THE HOOD</h1>
+      <form action="#" method="post">
+        <input type="email" placeholder="drop your email here..." required />
+        <button type="submit">SIGN UP TO NEWSLETTER</button>
+      </form>
+    </div>
+    <div class="disclaimer">
+      <p>By signing up, you consent to The Panichood sending you newsletters. We never share your information with third parties. You can unsubscribe at any time via the link in our emails.</p>
+    </div>
+  </div>
 </div>
-
-<div class="10percent">
-<h2 class="10percent">save 10%</h2>
-<p>... on your first order</p>
-</div>
-
-
-
-</div>
-
-
 
 <style>
+  body {
+    font-family: Arial, sans-serif;
+  }
 
+  #popup {
+    position: fixed;
+    z-index: 1000;
+    right: 2%;
+    bottom: 5%;
+  }
+  .popup {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+      visibility 0s,
+      opacity 0.3s;
+  }
 
+  .popup-content {
+    background-color: var(--accentColor);
+    color: var(--delicateWhite);
+    text-align: center;
+    position: relative;
+    max-width: 40%;
+    width: 100%;
+    padding-bottom: 2%;
+  }
 
+  .farve {
+    background: linear-gradient(to right, var(--accentColor) 60%, var(--delicateWhite) 40%);
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    font-size: 2.5cqw;
+    cursor: pointer;
+    color: var(--accentColor);
+  }
+
+  .text-section {
+    display: flex;
+  }
+
+  .join_the_hood {
+    width: 100%;
+  }
+
+  .text-section h1 {
+    margin: 0;
+    font-size: 8cqw;
+    text-align: start;
+    position: relative;
+    left: -1%;
+    width: 100%;
+    line-height: 100%;
+  }
+
+  .save_10_and_order {
+    align-self: center;
+    background-color: var(--delicateWhite);
+    color: var(--accentColor);
+    padding-right: 2.7%;
+  }
+
+  .save_10 {
+    font-size: 5cqw;
+    font-weight: 700;
+    text-align: start;
+    position: relative;
+    left: 8%;
+  }
+
+  .order {
+    text-align: start;
+    position: relative;
+    left: 8%;
+    font-size: 2cqw;
+    font-weight: 300;
+  }
+
+  h2 {
+    font-size: 5cqw;
+    text-align: end;
+    position: relative;
+    right: 5%;
+    top: -10%;
+  }
+
+  form {
+    margin: 20px 0;
+  }
+
+  form input {
+    padding: 10px;
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    border: 1px solid black;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2cqw;
+    color: var(--accentColor);
+  }
+
+  input::placeholder {
+    color: var(--accentColor);
+  }
+
+  form button {
+    padding: 10px;
+    width: calc(100% - 20px);
+    border: 1px solid black;
+    background-color: var(--delicateWhite);
+    color: #003399;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 1.5cqw;
+    font-weight: 700;
+  }
+
+  .disclaimer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .disclaimer p {
+    font-size: 0.8cqw;
+    width: 70%;
+  }
+
+  .show {
+    visibility: visible;
+    opacity: 1;
+  }
+  .gem {
+    display: none;
+  }
+
+  @media screen and (max-width: 800px) {
+    .join_the_hood {
+      display: none;
+    }
+
+    .popup-content {
+      max-width: 70%;
+      width: 100%;
+    }
+
+    .farve {
+      background: var(--delicateWhite);
+    }
+
+    .popup-content {
+      background-color: var(--delicateWhite);
+    }
+    .close-btn {
+      font-size: 5cqw;
+    }
+
+    .save_10 {
+      font-size: 16cqw;
+    }
+
+    .order {
+      font-size: 5cqw;
+      font-weight: 500;
+    }
+
+    form input {
+      font-size: 2.5cqw;
+    }
+
+    form button {
+      font-size: 3cqw;
+    }
+
+    .disclaimer p {
+      font-size: 2cqw;
+      color: var(--accentColor);
+    }
+  }
 </style>
+
+<script>
+  window.addEventListener("load", sidenVises);
+
+  function sidenVises() {
+    const tenOffElement = document.querySelector("#popup");
+    const xElement = document.querySelector(".popup");
+
+    if (tenOffElement) {
+      tenOffElement.classList.remove("gem");
+    }
+
+    if (xElement) {
+      xElement.addEventListener("click", gem);
+    }
+  }
+
+  function gem() {
+    const tenOffElement = document.querySelector("#popup");
+
+    if (tenOffElement) {
+      tenOffElement.classList.add("gem");
+    }
+  }
+</script>
