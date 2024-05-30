@@ -70,6 +70,7 @@ import Tenoff from "../components/Tenoff.astro";
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto;
+    border-bottom: 2px solid var(--oliveGrey);
   }
 
   .item img {
@@ -135,6 +136,25 @@ import Tenoff from "../components/Tenoff.astro";
     display: flex;
     grid-column: 1 / span 2;
     grid-row: 2 / span 1;
+  }
+
+  .tekst_ring {
+    position: relative;
+    display: inline-block; /* eller block afhængigt af dine behov */
+    width: 57px; /* Angiv den ønskede bredde */
+    height: 19px; /* Angiv den ønskede højde */
+    background-image: url(../../illustrationer/tekst_ring.svg);
+    background-size: contain; /* Sørger for at billedet passer ind i elementet */
+    background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
+    background-color: transparent;
+  }
+  .krussedulle {
+    display: inline-block; /* eller block afhængigt af dine behov */
+    width: 41px; /* Angiv den ønskede bredde */
+    height: 25px; /* Angiv den ønskede højde */
+    background-image: url(../../illustrationer/tekst_krussedulle.svg);
+    background-size: contain; /* Sørger for at billedet passer ind i elementet */
+    background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
   }
 
   @media (min-width: 800px) {
@@ -212,23 +232,6 @@ import Tenoff from "../components/Tenoff.astro";
       position: absolute;
       padding-top: 2%;
       right: 1.7%;
-    }
-
-    .tekst_ring {
-      display: inline-block; /* eller block afhængigt af dine behov */
-      width: 57px; /* Angiv den ønskede bredde */
-      height: 19px; /* Angiv den ønskede højde */
-      background-image: url(../../illustrationer/tekst_ring.svg);
-      background-size: contain; /* Sørger for at billedet passer ind i elementet */
-      background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
-    }
-    .krussedulle {
-      display: inline-block; /* eller block afhængigt af dine behov */
-      width: 41px; /* Angiv den ønskede bredde */
-      height: 25px; /* Angiv den ønskede højde */
-      background-image: url(../../illustrationer/tekst_krussedulle.svg);
-      background-size: contain; /* Sørger for at billedet passer ind i elementet */
-      background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
     }
 
     .text_community {

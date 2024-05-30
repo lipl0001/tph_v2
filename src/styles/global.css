@@ -20,7 +20,7 @@
 }
 
 /* DESKTOP */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   h1 {
     font-family: var(--primary);
     font-weight: 800;
@@ -29,7 +29,7 @@
   h2 {
     font-family: var(--primary);
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   h3 {
@@ -52,11 +52,17 @@
 }
 
 /* MOBIL */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   h1 {
     font-family: var(--primary);
     font-weight: 800;
     font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    font-family: var(--primary);
+    font-weight: 700;
   }
 
   h5 {
