@@ -8,7 +8,13 @@ import Card_products from "../components/Card_products.astro";
 import Collage from "../components/Collage.astro";
 import Tenoff from "../components/Tenoff.astro";
 
-const data = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items", {
+interface ProductItem {
+  id: number;
+  name: string;
+  price: number;
+}
+
+const data: ProductItem[] = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtjeWFmZHJ4aGRxeGpwdXRxanhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY1NDgyNjgsImV4cCI6MjAzMjEyNDI2OH0.Ds4oUM3yPKNH5mMMKKLDh3QmQ1iTPuS-sqllkSvXaY4",
@@ -39,11 +45,7 @@ const data = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/produ
       <p>20 PRODUCTS</p>
     </div>
     <section class="layout_produkt">
-      {
-        data.map((product) => {
-          return <Card_products data={product} />;
-        })
-      }
+      {data.map((product: ProductItem) => <Card_products data={product} />)}
     </section>
     <Collage />
   </main>

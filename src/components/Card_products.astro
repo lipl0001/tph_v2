@@ -4,14 +4,14 @@ console.log(data);
 ---
 
 <article>
-  <a href={`products/${data.slug}`}>
+  <a href={`/products/${data.slug}`}>
     <div class="img_container">
-      <img src={data.front} alt="" class="default-img" />
-      <img src={data.back} alt="" class="hover-img" />
+      <img src={data.front} alt="front" class="default-img" />
+      <img src={data.back} alt="back" class="hover-img" />
       {
         data.soldout && (
           <>
-            <img src="../../illustrationer/vare_overstreget2.svg" alt="" class="udsolgt" />
+            <img src="../../illustrationer/vare_overstreget2.svg" alt="overstreg" class="udsolgt" />
             <div class="box">Sold out</div>
           </>
         )
