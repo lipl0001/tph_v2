@@ -8,6 +8,7 @@ import Footer from "../../components/Footer.astro";
 import Get_inspired from "../../components/Get_inspired.astro";
 import Tenoff from "../../components/Tenoff.astro";
 
+//med hjælp fra chatgpt
 interface ProductItem {
   id: number;
   name: string;
@@ -89,6 +90,7 @@ console.log(data);
         <div class="panic_dealer_tee">
           <h1 class="h1">{data.name}</h1>
         </div>
+        <!-- Med hjælp fra chatgpt -->
         <div class="pris">
           <h2 class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price}</h2>
           {data.sale && <h2 class="discountedprice">{data.discountprice} DKK</h2>}
@@ -501,6 +503,7 @@ console.log(data);
     }
   </style>
 
+  <!-- Med hjælp fra chatgpt -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Accordion functionality

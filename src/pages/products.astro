@@ -8,11 +8,14 @@ import Card_products from "../components/Card_products.astro";
 import Collage from "../components/Collage.astro";
 import Tenoff from "../components/Tenoff.astro";
 
+//med hjælp fra chatgpt
 interface ProductItem {
   id: number;
   name: string;
   price: number;
 }
+
+//
 
 const data: ProductItem[] = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items", {
   method: "GET",
