@@ -26,29 +26,34 @@ const data: ProductItem[] = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.c
   <Header />
   <Tenoff />
   <main>
-    <p><a href="">Home</a> / <a href="">Products</a></p>
-    <h1>PRODUCTS</h1>
-    <section class="trending_now">
-      <div>
-        <img src="../../img/emil_croped.webp" alt="" />
-      </div>
-      <div class="trending_now_text">
-        <h2>TRENDING NOW</h2>
-        <img src="../../illustrationer/pil_product_list.svg" alt="" />
-      </div>
-    </section>
+    <div class="toppen">
+      <p><a href="/">Home</a> / <a href="/products">Products</a></p>
+      <h1>PRODUCTS</h1>
+      <section class="trending_now">
+        <div>
+          <a href="/products/tph-cards-tee">
+            <img src="../../img/emil_croped.webp" alt="" class="emil" />
+          </a>
+        </div>
+        <div class="trending_now_text">
+          <h2>TRENDING NOW</h2>
+          <img src="../../illustrationer/pil_product_list.svg" alt="pil_prodct_list" class="pil_product_list" />
+        </div>
+      </section>
+    </div>
     <div class="filter_produkter">
       <div class="filter">
         <img src="../../ikoner/Filter.png" alt="" />
         <p>FILTER</p>
       </div>
-      <p>20 PRODUCTS</p>
+      <p>9 PRODUCTS</p>
     </div>
     <section class="layout_produkt">
       {data.map((product: ProductItem) => <Card_products data={product} />)}
     </section>
-    <Collage />
   </main>
+  <Collage />
+
   <Footer />
 </Layout>
 
@@ -60,9 +65,6 @@ const data: ProductItem[] = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.c
   a {
     text-decoration: none;
     color: var(--oliveGrey);
-  }
-  h1 {
-    font-size: 4rem;
   }
   .trending_now img {
     max-width: 70%;
@@ -122,11 +124,54 @@ const data: ProductItem[] = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.c
   @media (max-width: 800px) {
     main {
       margin: 0%;
-      margin-left: 2%;
-      margin-right: 8%;
+      margin-left: 0%;
+      margin-right: 2%;
     }
     .layout_produkt {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .filter {
+      margin-left: 2%;
+    }
+    .toppen {
+      margin-left: 4.5%;
+    }
+
+    .trending_now {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .trending_now_text {
+      text-align: start;
+    }
+
+    .emil {
+      width: 70%;
+    }
+    .trending_now h2 {
+      font-size: 6cqw;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .trending_now_text {
+      display: flex;
+    }
+
+    .trending_now_text img {
+      position: relative;
+      right: 35%;
+      width: 20%;
+      transform: scaleX(-1);
+      rotate: -40deg;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .layout_produkt {
+      grid-template-columns: 0.7fr 1fr;
     }
   }
 </style>

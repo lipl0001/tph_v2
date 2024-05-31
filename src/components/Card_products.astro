@@ -30,9 +30,10 @@ console.log(data);
 
     <!--Med hjælp fra chat GPT-->
     <div class="pris">
-      <p class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price + " DKK"}</p>
+      <p class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price}</p>
       {data.sale && <p>{data.discountprice} DKK</p>}
     </div>
+    <!-- -->
   </div>
 </article>
 
@@ -49,10 +50,14 @@ console.log(data);
     justify-content: center;
     width: 67%;
     justify-self: center;
+    margin-top: 5%;
   }
   img {
     width: 100%;
   }
+
+  /* Med hjælp fra chat */
+
   .img_container .hover-img {
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -71,16 +76,16 @@ console.log(data);
   }
 
   .pris {
-    padding-top: 1%;
+    padding-top: 2%;
     display: flex;
   }
   .sale {
-    display: inline-block; /* eller block afhængigt af dine behov */
-    width: 41px; /* Angiv den ønskede bredde */
-    height: 19px; /* Angiv den ønskede højde */
+    display: inline-block;
+    width: 41px;
+    height: 19px;
     background-image: url(../../illustrationer/tekst_krussedulle.svg);
     background-size: contain; /* Sørger for at billedet passer ind i elementet */
-    background-repeat: no-repeat; /* Forhindrer gentagelse af billedet */
+    background-repeat: no-repeat;
   }
 
   .img_container {
@@ -88,6 +93,8 @@ console.log(data);
     width: 300px;
     height: 400px;
   }
+
+  /* Med hjælp fra chat */
   .img_container > *:not(.box):not(.box2) {
     width: 100%;
     height: 100%;
@@ -99,7 +106,7 @@ console.log(data);
     top: 0%;
     right: 0%;
     background-color: var(--notThatBlack);
-    color: white;
+    color: var(--delicateWhite);
     padding: 10px;
     font-family: var(--primary);
   }
@@ -144,6 +151,24 @@ console.log(data);
   }
   @media (max-width: 800px) {
     .img_container {
+      width: 225px;
+      height: 310px;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 67%;
+      justify-self: center;
+      left: 0%;
+      position: relative;
+      padding-left: 0%;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .img_container {
       width: 211px;
       height: 300px;
     }
@@ -154,6 +179,8 @@ console.log(data);
       justify-content: center;
       width: 67%;
       justify-self: center;
+      left: 0%;
+      position: relative;
     }
   }
 </style>

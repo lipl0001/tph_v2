@@ -3,9 +3,11 @@
 ---
 
 <div class="container">
-  <div class="knap">
-    <button><a href="https://thepanichood.com/collections/frontpage">EXPLORE PRODUCTS</a></button>
-  </div>
+  <a href="/products">
+    <div class="knap">
+      <button>EXPLORE PRODUCTS</button>
+    </div>
+  </a>
   <video class="hero_video" width="1512" height="1080" autoplay loop muted playsinline>
     <source src="https://www.projectjohansson.dk/kea/thepanichood/video/HeroVideoDesktop.mp4" type="video/mp4" />
   </video>
@@ -35,6 +37,7 @@
     left: 50%;
     transform: translate(-50%, -50%); /* Centrerer elementet */
     background-color: transparent;
+    z-index: 1000;
   }
 
   button {
@@ -47,15 +50,18 @@
     font-family: var(--primary);
     color: var(--delicateWhite);
     font-size: 1.5cqw;
+    z-index: 1000;
   }
 
-  .container a {
+  .knap a {
     text-decoration: none;
     background-color: transparent;
     color: var(--delicateWhite);
+    cursor: pointer;
+    z-index: 1;
   }
 
-  .container a:hover {
+  button:hover {
     text-decoration: underline;
   }
 
