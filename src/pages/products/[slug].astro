@@ -92,8 +92,8 @@ console.log(data);
         </div>
         <!-- Med hjælp fra chatgpt -->
         <div class="pris">
-          <h3 class={`${data.sale ? "sale" : ""}`}>{data.price} <span> {`${data.sale ? "" : "DKK"}`}</span></h3>
-          {data.sale && <h3 class="discountedprice">{data.discountprice} DKK</h3>}
+          <h2 class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price}</h2>
+          {data.sale && <h2 class="discountedprice">{data.discountprice} DKK</h2>}
         </div>
         <p>Tax included. Shipping calculated at checkout.</p>
         <p class="beskrivelse">
@@ -206,7 +206,6 @@ console.log(data);
     }
 
     h1 {
-      font-size: 3rem;
       margin: 0%;
     }
 
