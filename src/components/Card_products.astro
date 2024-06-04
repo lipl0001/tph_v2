@@ -30,7 +30,7 @@ console.log(data);
 
     <!--Med hjælp fra chat GPT-->
     <div class="pris">
-      <p class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price}</p>
+      <p class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price} <span> {`${data.sale ? "" : "DKK"}`}</span></p>
       {data.sale && <p>{data.discountprice} DKK</p>}
     </div>
     <!-- -->

@@ -36,7 +36,7 @@ interface ProductItem {
 
 // Fetching data and ensuring it matches the ProductItem type
 export async function getStaticPaths() {
-  const response = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items", {
+  const response = await fetch("https://kcyafdrxhdqxjputqjxa.supabase.co/rest/v1/product_items_duplicate", {
     method: "GET",
     headers: {
       apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtjeWFmZHJ4aGRxeGpwdXRxanhhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY1NDgyNjgsImV4cCI6MjAzMjEyNDI2OH0.Ds4oUM3yPKNH5mMMKKLDh3QmQ1iTPuS-sqllkSvXaY4",
@@ -92,8 +92,8 @@ console.log(data);
         </div>
         <!-- Med hjælp fra chatgpt -->
         <div class="pris">
-          <h2 class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price}</h2>
-          {data.sale && <h2 class="discountedprice">{data.discountprice} DKK</h2>}
+          <h3 class={`${data.sale ? "sale" : ""}`}>{data.price} <span> {`${data.sale ? "" : "DKK"}`}</span></h3>
+          {data.sale && <h3 class="discountedprice">{data.discountprice} DKK</h3>}
         </div>
         <p>Tax included. Shipping calculated at checkout.</p>
         <p class="beskrivelse">
