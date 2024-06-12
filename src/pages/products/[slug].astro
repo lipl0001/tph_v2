@@ -92,7 +92,7 @@ console.log(data);
         </div>
         <!-- Med hjælp fra chatgpt -->
         <div class="pris">
-          <h2 class={`original_pris ${data.sale ? "sale" : ""}`}>{data.price} <span> {`${data.sale ? "" : "DKK"}`}</span></h2>
+          <h2 class={`${data.sale ? "sale" : ""}`}>{data.price} <span> {`${data.sale ? "" : "DKK"}`}</span></h2>
           {data.sale && <h2 class="discountedprice">{data.discountprice} DKK</h2>}
         </div>
         <p>Tax included. Shipping calculated at checkout.</p>
