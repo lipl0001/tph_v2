@@ -92,8 +92,8 @@ console.log(data);
         </div>
         <!-- Med hjælp fra chatgpt -->
         <div class="pris">
-          <h2 class={`${data.sale ? "sale" : ""}`}>{data.price} <span> {`${data.sale ? "" : "DKK"}`}</span></h2>
-          {data.sale && <h2 class="discountedprice">{data.discountprice} DKK</h2>}
+          <h3 class={`${data.sale ? "sale" : ""}`}>{data.price} <span> {`${data.sale ? "" : "DKK"}`}</span></h3>
+          {data.sale && <h3 class="discountedprice">{data.discountprice} DKK</h3>}
         </div>
         <p>Tax included. Shipping calculated at checkout.</p>
         <p class="beskrivelse">
@@ -220,8 +220,8 @@ console.log(data);
 
     .sale {
       display: inline-block; /* eller block afhængigt af dine behov */
-      width: 82px;
-      height: 53px;
+      width: 45px;
+      height: 29px;
       background-image: url(../../illustrationer/tekst_krussedulle.svg);
       background-size: contain;
       background-repeat: no-repeat;
